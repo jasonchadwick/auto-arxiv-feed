@@ -1,7 +1,8 @@
-"""Embedding providers: OpenAI, Gemini, Anthropic stub, and local placeholder."""
+"""Embedding providers: OpenAI, Gemini, Anthropic stub, and local (sentence-transformers)."""
 
 import logging
 import os
+import sys
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
@@ -174,47 +175,130 @@ class AnthropicEmbedder(BaseEmbedder):
 
 
 # ---------------------------------------------------------------------------
-# Local (placeholder)
+# Local helpers
+# ---------------------------------------------------------------------------
+
+
+def _is_wsl() -> bool:
+    """Return *True* when running inside WSL (any version)."""
+    try:
+        with open("/proc/version") as fh:
+            return "microsoft" in fh.read().lower()
+    except OSError:
+        return False
+
+
+def _detect_local_device() -> str:
+    """Return the best available PyTorch device string.
+
+    Detection order: CUDA → MPS (Apple Silicon) → CPU.
+    On WSL2 with an NVIDIA driver, CUDA is accessible via the Windows driver
+    passthrough (``/dev/dxg``); no separate Linux CUDA toolkit is needed.
+    """
+    wsl = _is_wsl()
+    try:
+        import torch  # type: ignore[import]
+
+        if torch.cuda.is_available():
+            gpu_name = torch.cuda.get_device_name(0)
+            suffix = " via WSL2 passthrough" if wsl else ""
+            logger.info("LocalEmbedder: CUDA GPU detected%s — '%s'", suffix, gpu_name)
+            return "cuda"
+        if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+            logger.info("LocalEmbedder: Apple MPS detected")
+            return "mps"
+    except ImportError:
+        pass
+
+    if wsl:
+        logger.info(
+            "LocalEmbedder: no CUDA available (WSL2 detected). "
+            "For GPU support, install PyTorch with CUDA: "
+            "pip install torch --index-url https://download.pytorch.org/whl/cu121"
+        )
+    else:
+        logger.info("LocalEmbedder: no GPU detected, using CPU")
+    return "cpu"
+
+
+# ---------------------------------------------------------------------------
+# Local
 # ---------------------------------------------------------------------------
 
 
 class LocalEmbedder(BaseEmbedder):
-    """Framework for a locally-run embedding model.
+    """Local embedding model powered by ``sentence-transformers``.
 
-    Implement :meth:`_load_model` and :meth:`embed` (and optionally
-    :meth:`embed_batch`) in a subclass, or monkey-patch this class, to plug in
-    your preferred model.
+    The model is downloaded from HuggingFace on first use and cached in
+    ``~/.cache/huggingface/``.  Subsequent runs load from cache.
 
-    Example with ``sentence-transformers``::
+    **Recommended models**:
 
-        class SentenceTransformerEmbedder(LocalEmbedder):
-            def _load_model(self):
-                from sentence_transformers import SentenceTransformer
-                self._model = SentenceTransformer(self._model_name)
+    +-----------------------------------------+------+--------+-------------------------------------+
+    | Model name                              | Dims | Size   | Notes                               |
+    +=========================================+======+========+=====================================+
+    | ``BAAI/bge-small-en-v1.5`` (default)   |  384 | ~133 MB| Best speed/quality trade-off        |
+    | ``BAAI/bge-large-en-v1.5``             | 1024 | ~1.3 GB| Highest quality, general purpose    |
+    | ``allenai-specter``                     |  768 | ~400 MB| Fine-tuned on scientific papers     |
+    | ``all-MiniLM-L6-v2``                   |  384 |  ~22 MB| Smallest/fastest, lower quality     |
+    +-----------------------------------------+------+--------+-------------------------------------+
 
-            def embed(self, text: str):
-                return self._model.encode(text).tolist()
+    **Installation** (CPU only)::
 
-            def embed_batch(self, texts):
-                return self._model.encode(texts).tolist()
+        pip install sentence-transformers
+
+    **Installation** (CUDA GPU — Linux or WSL2 with NVIDIA driver)::
+
+        pip install torch --index-url https://download.pytorch.org/whl/cu121
+        pip install sentence-transformers
+
+    On WSL2 the Windows NVIDIA driver exposes CUDA via ``/dev/dxg``; no
+    separate Linux CUDA toolkit installation is required.
+
+    **Config** (``config.yaml``)::
+
+        embedding:
+          provider: local
+          model: BAAI/bge-small-en-v1.5
     """
 
-    def __init__(self, model: str = "local"):
+    DEFAULT_MODEL = "BAAI/bge-small-en-v1.5"
+
+    def __init__(self, model: str = DEFAULT_MODEL):
         self._model_name = model
-        self._model = None
+        self._st_model = None
+        self._device = _detect_local_device()
         self._load_model()
 
-    def _load_model(self):
-        """Load the local model.  Override in a subclass."""
-        raise NotImplementedError(
-            "LocalEmbedder._load_model() is not implemented. "
-            "Subclass LocalEmbedder and implement _load_model() and embed()."
-        )
+    def _load_model(self) -> None:
+        """Import sentence-transformers and load the model onto ``self._device``."""
+        try:
+            from sentence_transformers import SentenceTransformer  # type: ignore[import]
+        except ImportError as exc:
+            raise ImportError(
+                "sentence-transformers is required for provider='local'.\n"
+                "Install options:\n"
+                "  CPU only:         pip install sentence-transformers\n"
+                "  CUDA (WSL2/Linux): pip install torch --index-url "
+                "https://download.pytorch.org/whl/cu121 "
+                "&& pip install sentence-transformers"
+            ) from exc
 
-    def embed(self, text: str) -> List[float]:
-        """Embed *text* using the local model.  Override in a subclass."""
-        raise NotImplementedError("Implement embed() in your LocalEmbedder subclass.")
+        logger.info(
+            "LocalEmbedder: loading '%s' on device '%s'", self._model_name, self._device
+        )
+        self._st_model = SentenceTransformer(self._model_name, device=self._device)
+        logger.info("LocalEmbedder: model ready")
 
     @property
     def model_id(self) -> str:
         return f"local/{self._model_name}"
+
+    def embed(self, text: str) -> List[float]:
+        return self._st_model.encode(text, normalize_embeddings=True).tolist()
+
+    def embed_batch(self, texts: List[str]) -> List[List[float]]:
+        embeddings = self._st_model.encode(
+            texts, batch_size=32, normalize_embeddings=True, show_progress_bar=False
+        )
+        return [e.tolist() for e in embeddings]

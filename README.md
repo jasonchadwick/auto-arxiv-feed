@@ -13,9 +13,9 @@ vectors against your personal Zotero library.
    for any papers not yet embedded.
 
 2. **Daily (arXiv digest)** – `scripts/daily_digest.py` reads today's papers
-   from the arXiv RSS feeds you've configured, embeds each one, computes cosine
-   similarity against every Zotero paper embedding, and emails (or prints) a
-   digest of papers above your chosen similarity threshold.
+   from the arXiv RSS feeds you've configured, embeds each one, computes a
+   continuous LOF density score against your Zotero embedding distribution, and
+   emails (or prints) a digest of papers above your chosen threshold.
 
 ---
 
@@ -35,6 +35,19 @@ cp config.yaml.example config.yaml
 # Edit config.yaml – fill in Zotero credentials, arXiv categories,
 # embedding provider + API key, and email settings.
 ```
+
+Relevance can also be constrained with a sanity-check include list:
+
+```yaml
+relevance:
+   threshold: 0.50
+   lof_neighbors: 20
+   top_k: 5
+   always_include_terms: ["quantum error correction", "superconducting qubit"]
+```
+
+Any new paper whose title or abstract includes one of these terms is always
+included in the digest, even if its similarity score is below threshold.
 
 ### 3. Populate the database
 
@@ -78,8 +91,63 @@ python scripts/daily_digest.py --dry-run --threshold 0.75
 |-----------|-------------|----------------------|-------|
 | OpenAI    | `openai`    | `OPENAI_API_KEY`     | `text-embedding-3-small` / `text-embedding-3-large` |
 | Gemini    | `gemini`    | `GEMINI_API_KEY`     | `models/text-embedding-004` |
-| Local     | `local`     | –                    | Subclass `LocalEmbedder` and implement `_load_model()` / `embed()` |
+| Local     | `local`     | –                    | Built-in `sentence-transformers` support (no API key required) |
 | Anthropic | `anthropic` | –                    | **Not available** – Anthropic has no public embedding API yet |
+
+---
+
+## Choosing a local embedding model
+
+When `embedding.provider` is set to `local`, the project uses
+`sentence-transformers` and loads your chosen HuggingFace model name from
+`embedding.model`.
+
+### Install options
+
+CPU-only:
+
+```bash
+pip install sentence-transformers
+```
+
+NVIDIA GPU on Linux or WSL2:
+
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install sentence-transformers
+```
+
+On WSL2, CUDA works through the Windows NVIDIA driver passthrough; you do not
+need a separate Linux CUDA toolkit install for this project.
+
+### Model recommendations
+
+| Model | Dimensions | Approx size | Best for |
+|-------|------------|-------------|----------|
+| `BAAI/bge-small-en-v1.5` | 384 | ~133 MB | Default choice: best speed/quality balance |
+| `BAAI/bge-large-en-v1.5` | 1024 | ~1.3 GB | Highest quality, slower and heavier |
+| `allenai-specter` | 768 | ~400 MB | Scientific-paper similarity (often strong for arXiv workflows) |
+| `all-MiniLM-L6-v2` | 384 | ~22 MB | Fastest and lightest, lower retrieval quality |
+
+### How to choose
+
+1. Start with `BAAI/bge-small-en-v1.5`.
+2. If relevance quality is too low, try `allenai-specter` (domain-specific) or
+   `BAAI/bge-large-en-v1.5` (general high quality).
+3. If runtime/memory is your main constraint, use `all-MiniLM-L6-v2`.
+4. Re-tune your similarity threshold after changing models (for example with
+   `scripts/daily_digest.py --dry-run --threshold 0.75`) because score
+   distributions differ by model.
+
+### Config example
+
+```yaml
+embedding:
+  provider: local
+  model: BAAI/bge-small-en-v1.5
+```
+
+First run downloads the model to your HuggingFace cache; later runs reuse it.
 
 ---
 
@@ -94,7 +162,7 @@ auto-arxiv-feed/
 │   ├── database.py            # SQLite paper & embedding store
 │   ├── email_digest.py        # HTML/plain-text email builder + sender
 │   ├── embeddings.py          # provider implementations
-│   ├── relevance.py           # cosine similarity filtering
+│   ├── relevance.py           # centroid-similarity relevance filtering
 │   └── zotero_client.py       # Zotero API wrapper
 ├── scripts/
 │   ├── update_zotero.py       # hourly: sync Zotero & embed new papers

@@ -44,7 +44,7 @@ def test_known_similarity():
 
 def test_relevant_above_threshold():
     new_emb = [1.0, 0.0]
-    library = [("lib1", [1.0, 0.0])]  # identical → similarity 1.0
+    library = [("lib1", [1.0, 0.0])]  # tiny-library fallback path
     is_rel, max_sim, top = find_relevant_papers(new_emb, library, threshold=0.9)
     assert is_rel is True
     assert max_sim == pytest.approx(1.0)
@@ -53,10 +53,10 @@ def test_relevant_above_threshold():
 
 def test_not_relevant_below_threshold():
     new_emb = [1.0, 0.0]
-    library = [("lib1", [0.0, 1.0])]  # orthogonal → similarity 0.0
-    is_rel, max_sim, _ = find_relevant_papers(new_emb, library, threshold=0.5)
+    library = [("lib1", [0.0, 1.0])]  # tiny-library fallback path
+    is_rel, max_sim, _ = find_relevant_papers(new_emb, library, threshold=0.75)
     assert is_rel is False
-    assert max_sim == pytest.approx(0.0)
+    assert max_sim == pytest.approx(0.5)
 
 
 def test_empty_library():
@@ -84,8 +84,14 @@ def test_top_k_limit():
 
 def test_exact_threshold_boundary():
     new_emb = [1.0, 0.0]
-    library = [("lib1", [1.0, 0.0])]
-    is_rel, _, _ = find_relevant_papers(new_emb, library, threshold=1.0)
+    library = [
+        ("a", [1.0, 0.0]),
+        ("b", [0.95, 0.05]),
+        ("c", [0.9, 0.1]),
+        ("d", [0.92, 0.08]),
+    ]
+    _, score, _ = find_relevant_papers(new_emb, library, threshold=0.0)
+    is_rel, _, _ = find_relevant_papers(new_emb, library, threshold=score)
     assert is_rel is True
 
 
@@ -99,3 +105,27 @@ def test_sorted_descending():
     _, _, top = find_relevant_papers(new_emb, library, threshold=0.0, top_k=3)
     sims = [sim for _, sim in top]
     assert sims == sorted(sims, reverse=True)
+
+
+def test_lof_density_prefers_in_distribution_point():
+    library = [
+        ("a", [1.0, 0.0]),
+        ("b", [0.98, 0.02]),
+        ("c", [0.95, 0.05]),
+        ("d", [0.92, 0.08]),
+        ("e", [0.9, 0.1]),
+    ]
+
+    inlier = [0.96, 0.04]
+    outlier = [-1.0, 0.0]
+
+    _, inlier_score, _ = find_relevant_papers(inlier, library, threshold=0.0)
+    _, outlier_score, _ = find_relevant_papers(outlier, library, threshold=0.0)
+
+    assert inlier_score > outlier_score
+
+    mid_threshold = (inlier_score + outlier_score) / 2.0
+    inlier_rel, _, _ = find_relevant_papers(inlier, library, threshold=mid_threshold)
+    outlier_rel, _, _ = find_relevant_papers(outlier, library, threshold=mid_threshold)
+    assert inlier_rel is True
+    assert outlier_rel is False

@@ -28,9 +28,15 @@ embedding:
                                         #   text-embedding-3-large (higher quality)
                                         # Gemini model names:
                                         #   models/text-embedding-004
+                                        # Local model names (sentence-transformers):
+                                        #   BAAI/bge-small-en-v1.5  (default, ~133 MB)
+                                        #   BAAI/bge-large-en-v1.5  (~1.3 GB, best quality)
+                                        #   allenai-specter         (~400 MB, scientific papers)
+                                        #   all-MiniLM-L6-v2        (~22 MB, ultra-fast)
   # API keys below are optional if the matching environment variables are set.
   openai_api_key: ""     # or set OPENAI_API_KEY env var
   gemini_api_key: ""     # or set GEMINI_API_KEY / GOOGLE_API_KEY env var
+  # No API key needed for provider: local
 
 # ── Local database ───────────────────────────────────────────────────────────
 database:
@@ -38,11 +44,27 @@ database:
 
 # ── Relevance thresholds ─────────────────────────────────────────────────────
 relevance:
-  # Cosine similarity threshold (0 to 1).  Papers whose maximum similarity to
-  # any library paper exceeds this value will be included in the digest.
-  # Typical starting point: 0.80.  Use --dry-run --threshold X to experiment.
-  threshold: 0.80
-  top_k: 5    # number of similar library papers to show per result
+  # LOF density-score threshold (0 to 1). Papers whose embedding has inlier-like
+  # local density with respect to your library above this value are included.
+  # Typical starting point: 0.50. Use --dry-run --threshold X to experiment.
+  threshold: 0.50
+  # Number of neighbors used by LOF for local density estimation.
+  # Typical range: 10-50. Higher values make scoring more global/smoother.
+  lof_neighbors: 20
+  top_k: 5    # number of cosine-nearest library papers shown per result
+  # Papers whose title or abstract contains any of these terms are always
+  # included in the digest (case-insensitive sanity check).
+  always_include_terms: []
+  # Example:
+  # always_include_terms: ["error correction", "superconducting qubit"]
+
+  # Collections to exclude from LOF clustering (matched by name, case-insensitive,
+  # applied recursively to all subcollections).  A paper is only excluded if
+  # ALL of its collections are excluded; a paper in both an excluded and a
+  # non-excluded collection is still included.
+  excluded_collections: []
+  # Example:
+  # excluded_collections: ["reading list", "archive"]
 
 # ── Email digest ─────────────────────────────────────────────────────────────
 # Leave smtp_host empty (or omit the whole email block) to print the digest

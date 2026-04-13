@@ -22,6 +22,7 @@ class ZoteroPaper:
     doi: Optional[str] = None
     date_published: Optional[str] = None
     date_added: Optional[str] = None
+    collections: List[str] = field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
@@ -81,6 +82,28 @@ class ZoteroClient:
         self.library.items(limit=1)
         return self.library.last_modified_version()
 
+    def get_all_collections(self) -> List[dict]:
+        """Return a flat list of all Zotero collections.
+
+        Each item is ``{"key": str, "name": str, "parent_key": str | None}``.
+        pyzotero returns ``parentCollection: False`` for top-level collections;
+        this method normalises that to ``None``.
+        """
+        logger.info("Fetching Zotero collections…")
+        raw = self.library.everything(self.library.collections())
+        result: List[dict] = []
+        for item in raw:
+            data = item.get("data", {})
+            key = item.get("key") or data.get("key", "")
+            if not key:
+                continue
+            name = data.get("name", "")
+            parent_raw = data.get("parentCollection", False)
+            parent_key = parent_raw if parent_raw else None
+            result.append({"key": key, "name": name, "parent_key": parent_key})
+        logger.info("Fetched %d collection(s).", len(result))
+        return result
+
     # ------------------------------------------------------------------
     # Private helpers
     # ------------------------------------------------------------------
@@ -122,6 +145,8 @@ class ZoteroClient:
             "dateAdded", data.get("dateAdded", "")
         )
 
+        collections: List[str] = data.get("collections") or []
+
         return ZoteroPaper(
             item_key=item_key,
             title=title,
@@ -131,4 +156,5 @@ class ZoteroClient:
             doi=doi or None,
             date_published=date_published or None,
             date_added=date_added or None,
+            collections=collections,
         )

@@ -111,6 +111,23 @@ def test_get_all_embeddings_for_source(db):
     assert set(paper_ids) == {"p1", "p2"}
 
 
+def test_get_all_embeddings_with_titles_for_source(db):
+    db.upsert_paper("p1", "zotero", title="First paper")
+    db.upsert_paper("p2", "zotero", title="")
+    db.upsert_paper("p3", "arxiv", title="Ignored")
+    db.store_embedding("p1", "m", [1.0])
+    db.store_embedding("p2", "m", [2.0])
+    db.store_embedding("p3", "m", [3.0])
+
+    result = db.get_all_embeddings_with_titles_for_source("zotero", "m")
+    rows = {paper_id: (title, emb) for paper_id, title, emb in result}
+
+    assert set(rows) == {"p1", "p2"}
+    assert rows["p1"][0] == "First paper"
+    assert rows["p2"][0] == ""
+    assert rows["p1"][1] == [1.0]
+
+
 def test_null_authors_handled(db):
     db.upsert_paper("p1", "zotero", authors=None)
     paper = db.get_papers_by_source("zotero")[0]
