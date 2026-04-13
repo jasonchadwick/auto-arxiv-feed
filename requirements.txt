@@ -1,0 +1,14 @@
+# Core runtime dependencies
+feedparser>=6.0
+requests>=2.31
+numpy>=1.26
+pyyaml>=6.0
+pyzotero>=1.5
+
+# Embedding API providers (install only what you need)
+openai>=1.30                  # for provider: openai
+google-genai>=0.8              # for provider: gemini
+# anthropic                   # no embedding API available yet
+
+# Development / testing
+pytest>=8.0
