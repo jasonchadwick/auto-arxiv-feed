@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# auto-arxiv-feed configuration
+# Copy this file to config.yaml and fill in your credentials.
+# ---------------------------------------------------------------------------
+
+# ── Zotero ──────────────────────────────────────────────────────────────────
+zotero:
+  user_id: "YOUR_ZOTERO_USER_ID"      # numeric ID from zotero.org/settings/keys
+  api_key: "YOUR_ZOTERO_API_KEY"      # create a key at zotero.org/settings/keys
+  library_type: "user"                # "user" or "group"
+
+# ── arXiv categories to monitor ─────────────────────────────────────────────
+arxiv:
+  categories:
+    - "quant-ph"
+    - "cs.ET"
+    # Add more arXiv category identifiers as needed, e.g.:
+    # - "cond-mat.mes-hall"
+    # - "cs.LG"
+
+# ── Embedding provider ───────────────────────────────────────────────────────
+# provider: "openai" | "gemini" | "local"
+# (Anthropic/Claude is listed for completeness but has no embedding API yet.)
+embedding:
+  provider: "openai"
+  model: "text-embedding-3-small"       # OpenAI model names:
+                                        #   text-embedding-3-small (fastest/cheapest)
+                                        #   text-embedding-3-large (higher quality)
+                                        # Gemini model names:
+                                        #   models/text-embedding-004
+  # API keys below are optional if the matching environment variables are set.
+  openai_api_key: ""     # or set OPENAI_API_KEY env var
+  gemini_api_key: ""     # or set GEMINI_API_KEY / GOOGLE_API_KEY env var
+
+# ── Local database ───────────────────────────────────────────────────────────
+database:
+  path: "papers.db"
+
+# ── Relevance thresholds ─────────────────────────────────────────────────────
+relevance:
+  # Cosine similarity threshold (0 to 1).  Papers whose maximum similarity to
+  # any library paper exceeds this value will be included in the digest.
+  # Typical starting point: 0.80.  Use --dry-run --threshold X to experiment.
+  threshold: 0.80
+  top_k: 5    # number of similar library papers to show per result
+
+# ── Email digest ─────────────────────────────────────────────────────────────
+# Leave smtp_host empty (or omit the whole email block) to print the digest
+# to stdout instead of sending email.
+email:
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  smtp_user: "your@gmail.com"
+  smtp_password: ""     # or set EMAIL_PASSWORD env var
+  from_address: "your@gmail.com"
+  to_address: "your@gmail.com"
+  subject_prefix: "[arXiv Feed]"
