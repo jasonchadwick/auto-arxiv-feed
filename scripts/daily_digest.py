@@ -16,6 +16,7 @@ import argparse
 import logging
 import os
 import sys
+import time
 import traceback
 from typing import Optional
 
@@ -51,16 +52,46 @@ def _api_key_for(emb_cfg: dict) -> Optional[str]:
     return emb_cfg.get(f"{provider}_api_key") or None
 
 
+def _resilience_config(config: Optional[dict]) -> dict:
+    return (config or {}).get("resilience") or {}
+
+
+def _should_retry(attempt: int, retry_forever: bool, max_attempts: int) -> bool:
+    if retry_forever:
+        return True
+    return attempt < max_attempts
+
+
 def _print_digest(papers: list) -> None:
     """Fallback: print the digest to stdout when no email config is present."""
-    print(f"\nFound {len(papers)} relevant paper(s):\n")
-    for i, p in enumerate(papers, start=1):
+    new_listings = [paper for paper in papers if not paper.get("is_update")]
+    updates = [paper for paper in papers if paper.get("is_update")]
+
+    print(
+        f"\nFound {len(papers)} relevant item(s): "
+        f"{len(new_listings)} new listing(s), {len(updates)} update(s).\n"
+    )
+
+    if new_listings:
+        print("New listings")
+        print("-" * 50)
+    for i, p in enumerate(new_listings, start=1):
         print(f"{i}. {p.get('title') or '(no title)'}")
         authors = p.get("authors") or []
         if authors:
             print(f"   Authors:    {', '.join(authors)}")
         print(f"   URL:        {p.get('url') or ''}")
         print(f"   Similarity: {p.get('max_similarity', 0.0):.4f}")
+        override_terms = p.get("override_terms") or []
+        if p.get("override_by_terms") and override_terms:
+            print(f"   Override:   keyword(s): {', '.join(override_terms)}")
+        print()
+
+    if updates:
+        print("Updates")
+        print("-" * 50)
+        for i, p in enumerate(updates, start=1):
+            print(f"{i}. {p.get('title') or '(no title)'}")
         print()
 
 
@@ -161,8 +192,14 @@ def run(
     # 1. Fetch new arXiv papers for the configured categories
     # ------------------------------------------------------------------
     categories: list = config["arxiv"]["categories"]
+    arxiv_request_delay = float(config.get("arxiv", {}).get("request_delay", 3.0))
+    arxiv_timeout = float(config.get("arxiv", {}).get("timeout_seconds", 60.0))
     logger.info("Fetching new arXiv papers for: %s", categories)
-    new_papers = get_new_papers(categories)
+    new_papers = get_new_papers(
+        categories,
+        request_delay=arxiv_request_delay,
+        api_timeout=arxiv_timeout,
+    )
     logger.info("Retrieved %d new paper(s) from arXiv.", len(new_papers))
 
     if not new_papers:
@@ -276,6 +313,8 @@ def run(
                         "abstract": paper.abstract,
                         "url": paper.url,
                         "date_published": paper.date_published,
+                        "date_updated": paper.date_updated,
+                        "is_update": paper.is_update,
                         "max_similarity": max_sim,
                         "top_matches": [
                             (
@@ -321,6 +360,8 @@ def run(
                         "abstract": paper.abstract,
                         "url": paper.url,
                         "date_published": paper.date_published,
+                        "date_updated": paper.date_updated,
+                        "is_update": paper.is_update,
                         "max_similarity": 0.0,
                         "top_matches": [],
                         "override_by_terms": True,
@@ -360,6 +401,8 @@ def run(
                         "abstract": paper.abstract,
                         "url": paper.url,
                         "date_published": paper.date_published,
+                        "date_updated": paper.date_updated,
+                        "is_update": paper.is_update,
                         "max_similarity": 0.0,
                         "top_matches": [],
                         "override_by_terms": True,
@@ -450,37 +493,77 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    config: Optional[dict] = None
     try:
         config = load_config(args.config)
-        run(config, dry_run=args.dry_run, threshold_override=args.threshold)
     except Exception as exc:  # noqa: BLE001
-        logger.exception("Unhandled error in daily_digest.")
-
-        if config is None:
-            try:
-                config = load_config(args.config)
-            except Exception:  # noqa: BLE001
-                config = None
-
-        email_cfg = (config or {}).get("email") or {}
-        if email_cfg.get("smtp_host"):
-            send_error_notification(
-                script_name="scripts/daily_digest.py",
-                error_message=str(exc),
-                traceback_text=traceback.format_exc(),
-                smtp_host=email_cfg.get("smtp_host", ""),
-                smtp_port=int(email_cfg.get("smtp_port", 587)),
-                smtp_user=email_cfg.get("smtp_user", ""),
-                smtp_password=email_cfg.get("smtp_password")
-                or os.environ.get("EMAIL_PASSWORD", ""),
-                from_address=email_cfg.get("from_address", ""),
-                to_address=email_cfg.get("to_address", ""),
-                subject_prefix=email_cfg.get("subject_prefix", "[arXiv Feed]"),
-                dry_run=args.dry_run,
-            )
-
+        logger.exception("Failed to load config: %s", args.config)
         raise SystemExit(1) from exc
+
+    resilience_cfg = _resilience_config(config)
+    retry_forever = bool(resilience_cfg.get("retry_until_success", False))
+    max_attempts = max(1, int(resilience_cfg.get("max_attempts", 3)))
+    retry_delay_seconds = max(1.0, float(resilience_cfg.get("retry_delay_seconds", 30)))
+    retry_backoff = max(1.0, float(resilience_cfg.get("retry_backoff", 2.0)))
+    max_retry_delay_seconds = max(
+        retry_delay_seconds,
+        float(resilience_cfg.get("max_retry_delay_seconds", 600)),
+    )
+
+    attempt = 0
+    delay = retry_delay_seconds
+    while True:
+        attempt += 1
+        try:
+            run(config, dry_run=args.dry_run, threshold_override=args.threshold)
+            if attempt > 1:
+                logger.info("daily_digest recovered after %d attempt(s).", attempt)
+            return
+        except Exception as exc:  # noqa: BLE001
+            logger.exception("Unhandled error in daily_digest (attempt %d).", attempt)
+
+            email_cfg = (config or {}).get("email") or {}
+            if email_cfg.get("smtp_host"):
+                send_error_notification(
+                    script_name="scripts/daily_digest.py",
+                    error_message=str(exc),
+                    traceback_text=traceback.format_exc(),
+                    smtp_host=email_cfg.get("smtp_host", ""),
+                    smtp_port=int(email_cfg.get("smtp_port", 587)),
+                    smtp_user=email_cfg.get("smtp_user", ""),
+                    smtp_password=email_cfg.get("smtp_password")
+                    or os.environ.get("EMAIL_PASSWORD", ""),
+                    from_address=email_cfg.get("from_address", ""),
+                    to_address=email_cfg.get("to_address", ""),
+                    subject_prefix=email_cfg.get("subject_prefix", "[arXiv Feed]"),
+                    dry_run=args.dry_run,
+                    max_attempts=int(resilience_cfg.get("error_email_max_attempts", 6)),
+                    retry_delay_seconds=float(
+                        resilience_cfg.get("error_email_retry_delay_seconds", 30)
+                    ),
+                    retry_backoff=float(resilience_cfg.get("error_email_retry_backoff", 2.0)),
+                    max_retry_delay_seconds=float(
+                        resilience_cfg.get("error_email_max_retry_delay_seconds", 300)
+                    ),
+                    fallback_log_path=str(
+                        resilience_cfg.get(
+                            "error_email_fallback_log_path",
+                            "log/unsent_error_notifications.log",
+                        )
+                    ),
+                )
+
+            if not _should_retry(attempt, retry_forever, max_attempts):
+                raise SystemExit(1) from exc
+
+            max_attempts_label = "inf" if retry_forever else str(max_attempts)
+            logger.warning(
+                "Retrying daily_digest in %.1f seconds (attempt %d/%s)...",
+                delay,
+                attempt + 1,
+                max_attempts_label,
+            )
+            time.sleep(delay)
+            delay = min(max_retry_delay_seconds, delay * retry_backoff)
 
 
 if __name__ == "__main__":

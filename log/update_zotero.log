@@ -1,0 +1,1467 @@
+2026-04-14 13:10:04,465 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-14 13:10:09,179 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-14 13:10:09,397 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:09,575 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:09,667 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:09,683 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:09,683 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-14 13:10:09,773 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-14 13:10:09,774 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-14 13:10:09,790 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:09,878 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:09,896 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-14 13:10:10,024 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:10,043 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:10,131 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:10,147 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:10,237 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-14 13:10:10,330 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:10,347 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  40%|████      | 80/199 [00:00<00:00, 683.47it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1151.46it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-14 13:10:10,774 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-14 13:10:10,866 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-14 13:10:10,965 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-14 13:10:11,056 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-14 13:10:11,147 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:11,162 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:11,252 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:11,270 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:11,361 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:11,378 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:11,472 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:11,489 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:11,591 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-14 13:10:11,694 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-14 13:10:13,844 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-14 13:10:13,860 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-14 13:10:13,994 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-14 13:10:20,286 INFO     LocalEmbedder: model ready
+2026-04-14 13:10:20,288 INFO     Fetching papers from Zotero…
+2026-04-14 13:10:20,288 INFO     Fetching journalArticle items from Zotero…
+2026-04-14 13:10:25,759 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:28,928 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:31,342 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:31,571 INFO       → 259 items fetched
+2026-04-14 13:10:31,572 INFO     Fetching conferencePaper items from Zotero…
+2026-04-14 13:10:34,248 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:34,729 INFO       → 38 items fetched
+2026-04-14 13:10:34,729 INFO     Fetching preprint items from Zotero…
+2026-04-14 13:10:38,949 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:42,965 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:45,445 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:45,447 INFO       → 242 items fetched
+2026-04-14 13:10:45,462 INFO     Total Zotero papers: 539
+2026-04-14 13:10:45,464 INFO     Zotero library contains 539 paper(s).
+2026-04-14 13:10:50,399 INFO     0 new paper(s) added to the database.
+2026-04-14 13:10:50,399 INFO     Syncing Zotero collections…
+2026-04-14 13:10:50,399 INFO     Fetching Zotero collections…
+2026-04-14 13:10:51,205 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:51,401 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-14 13:10:51,404 INFO     Fetched 115 collection(s).
+2026-04-14 13:10:56,270 INFO     Collection memberships synced for 539 paper(s).
+2026-04-14 13:10:56,272 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-14 13:10:56,272 INFO     All Zotero papers are already embedded.
+2026-04-16 07:00:04,199 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-16 07:00:09,225 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-16 07:00:09,387 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-16 07:00:09,387 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-16 07:00:09,397 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:09,486 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:09,500 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:09,501 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-16 07:00:09,649 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:09,658 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:09,742 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:09,751 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-16 07:00:09,840 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:09,850 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:09,943 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:09,954 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:10,037 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 07:00:10,128 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:10,138 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  47%|████▋     | 94/199 [00:00<00:00, 939.90it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1735.94it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-16 07:00:10,471 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 07:00:10,558 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 07:00:10,694 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 07:00:10,793 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 07:00:10,877 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:10,888 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:10,970 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:10,978 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:11,063 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:11,074 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:11,160 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:11,171 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:11,263 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-16 07:00:11,351 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-16 07:00:11,494 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 07:00:11,502 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-16 07:00:11,593 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-16 07:00:12,375 INFO     LocalEmbedder: model ready
+2026-04-16 07:00:12,375 INFO     Fetching papers from Zotero…
+2026-04-16 07:00:12,375 INFO     Fetching journalArticle items from Zotero…
+2026-04-16 07:00:20,221 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:25,821 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:28,949 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:28,952 INFO       → 259 items fetched
+2026-04-16 07:00:28,952 INFO     Fetching conferencePaper items from Zotero…
+2026-04-16 07:00:31,105 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:31,107 INFO       → 38 items fetched
+2026-04-16 07:00:31,107 INFO     Fetching preprint items from Zotero…
+2026-04-16 07:00:38,329 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:43,514 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:46,021 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:46,022 INFO       → 242 items fetched
+2026-04-16 07:00:46,025 INFO     Total Zotero papers: 539
+2026-04-16 07:00:46,026 INFO     Zotero library contains 539 paper(s).
+2026-04-16 07:00:47,730 INFO     0 new paper(s) added to the database.
+2026-04-16 07:00:47,730 INFO     Syncing Zotero collections…
+2026-04-16 07:00:47,730 INFO     Fetching Zotero collections…
+2026-04-16 07:00:48,645 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:48,882 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-16 07:00:48,883 INFO     Fetched 115 collection(s).
+2026-04-16 07:00:50,400 INFO     Collection memberships synced for 539 paper(s).
+2026-04-16 07:00:50,402 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-16 07:00:50,402 INFO     All Zotero papers are already embedded.
+2026-04-17 07:00:04,044 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-17 07:00:08,461 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-17 07:00:08,837 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-17 07:00:08,838 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-17 07:00:08,902 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:09,047 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:09,111 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:09,112 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-17 07:00:09,264 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:09,336 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:09,472 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:09,537 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-17 07:00:09,674 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:09,735 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:09,866 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:09,923 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:10,060 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-17 07:00:10,199 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:10,265 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  52%|█████▏    | 103/199 [00:00<00:00, 1028.80it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1884.48it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-17 07:00:10,641 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-17 07:00:10,780 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-17 07:00:10,931 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-17 07:00:11,080 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-17 07:00:11,227 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:11,302 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:11,456 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:11,534 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:11,679 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:11,755 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:11,907 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:11,982 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:12,140 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-17 07:00:12,292 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-17 07:00:12,482 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-17 07:00:12,547 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-17 07:00:12,692 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-17 07:00:13,403 INFO     LocalEmbedder: model ready
+2026-04-17 07:00:13,403 INFO     Fetching papers from Zotero…
+2026-04-17 07:00:13,403 INFO     Fetching journalArticle items from Zotero…
+2026-04-17 07:00:22,057 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:26,625 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:29,993 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:29,995 INFO       → 264 items fetched
+2026-04-17 07:00:29,995 INFO     Fetching conferencePaper items from Zotero…
+2026-04-17 07:00:32,637 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:32,638 INFO       → 38 items fetched
+2026-04-17 07:00:32,638 INFO     Fetching preprint items from Zotero…
+2026-04-17 07:00:39,098 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:42,841 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:44,535 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:44,536 INFO       → 243 items fetched
+2026-04-17 07:00:44,539 INFO     Total Zotero papers: 545
+2026-04-17 07:00:44,541 INFO     Zotero library contains 545 paper(s).
+2026-04-17 07:00:46,304 INFO     6 new paper(s) added to the database.
+2026-04-17 07:00:46,304 INFO     Syncing Zotero collections…
+2026-04-17 07:00:46,304 INFO     Fetching Zotero collections…
+2026-04-17 07:00:47,506 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:47,850 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-17 07:00:47,851 INFO     Fetched 118 collection(s).
+2026-04-17 07:00:49,458 INFO     Collection memberships synced for 545 paper(s).
+2026-04-17 07:00:49,460 INFO     6 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.87it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.87it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 31.10it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 60.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.69it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 20.58it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 20.97it/s]
+2026-04-17 07:00:50,209 INFO       Embedded 6/6 paper(s)…
+2026-04-17 07:00:50,209 INFO     Done. 6 paper(s) embedded, 0 error(s).
+2026-04-17 07:00:50,703 INFO     Recomputed 114 collection centroid(s).
+2026-04-20 07:00:04,388 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-20 07:00:09,082 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-20 07:00:09,250 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:09,261 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:09,356 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-20 07:00:09,356 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-20 07:00:09,364 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:09,365 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-20 07:00:09,443 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:09,452 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:09,557 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:09,568 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-20 07:00:09,659 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:09,668 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:09,746 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:09,756 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:09,837 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-20 07:00:09,915 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:09,924 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  51%|█████     | 101/199 [00:00<00:00, 990.12it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1867.76it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-20 07:00:10,250 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-20 07:00:10,334 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-20 07:00:10,414 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-20 07:00:10,501 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-20 07:00:10,581 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:10,593 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:10,674 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:10,684 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:10,769 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:10,778 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:10,854 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:10,864 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:10,947 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 07:00:11,039 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 07:00:11,155 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:00:11,163 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-20 07:00:11,267 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-20 07:00:11,764 INFO     LocalEmbedder: model ready
+2026-04-20 07:00:11,764 INFO     Fetching papers from Zotero…
+2026-04-20 07:00:11,764 INFO     Fetching journalArticle items from Zotero…
+2026-04-20 07:00:29,273 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:00:37,060 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:00:43,252 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:00:43,254 INFO       → 269 items fetched
+2026-04-20 07:00:43,254 INFO     Fetching conferencePaper items from Zotero…
+2026-04-20 07:00:49,028 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:00:49,030 INFO       → 38 items fetched
+2026-04-20 07:00:49,030 INFO     Fetching preprint items from Zotero…
+2026-04-20 07:00:54,594 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:00:57,738 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:01:01,397 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:01:01,399 INFO       → 247 items fetched
+2026-04-20 07:01:01,402 INFO     Total Zotero papers: 554
+2026-04-20 07:01:01,403 INFO     Zotero library contains 554 paper(s).
+2026-04-20 07:01:03,444 INFO     10 new paper(s) added to the database.
+2026-04-20 07:01:03,444 INFO     Syncing Zotero collections…
+2026-04-20 07:01:03,444 INFO     Fetching Zotero collections…
+2026-04-20 07:01:05,000 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:01:05,432 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-20 07:01:05,433 INFO     Fetched 119 collection(s).
+2026-04-20 07:01:07,216 INFO     Collection memberships synced for 554 paper(s).
+2026-04-20 07:01:07,219 INFO     10 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.25it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.25it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 30.09it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 29.04it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 18.96it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 44.47it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  9.27it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  9.26it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 104.71it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 101.82it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 100.30it/s]
+2026-04-20 07:01:08,033 INFO       Embedded 10/10 paper(s)…
+2026-04-20 07:01:08,034 INFO     Done. 10 paper(s) embedded, 0 error(s).
+2026-04-20 07:01:08,594 INFO     Recomputed 115 collection centroid(s).
+2026-04-21 07:00:03,644 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-21 07:00:07,756 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-21 07:00:07,891 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:07,899 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:07,984 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-21 07:00:07,985 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-21 07:00:07,993 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:07,993 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-21 07:00:08,071 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:08,080 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:08,157 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:08,170 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-21 07:00:08,258 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:08,267 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:08,350 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:08,362 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:08,441 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-21 07:00:08,537 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:08,545 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  46%|████▌     | 91/199 [00:00<00:00, 904.32it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1743.53it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-21 07:00:08,861 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-21 07:00:08,964 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-21 07:00:09,048 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-21 07:00:09,190 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-21 07:00:09,267 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:09,277 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:09,356 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:09,364 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:09,451 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:09,460 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:09,540 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:09,548 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:09,644 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-21 07:00:09,722 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-21 07:00:09,847 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-21 07:00:09,855 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-21 07:00:09,945 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-21 07:00:11,482 INFO     LocalEmbedder: model ready
+2026-04-21 07:00:11,482 INFO     Fetching papers from Zotero…
+2026-04-21 07:00:11,482 INFO     Fetching journalArticle items from Zotero…
+2026-04-21 07:00:21,255 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:30,487 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:35,018 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:35,020 INFO       → 269 items fetched
+2026-04-21 07:00:35,020 INFO     Fetching conferencePaper items from Zotero…
+2026-04-21 07:00:38,083 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:38,084 INFO       → 38 items fetched
+2026-04-21 07:00:38,084 INFO     Fetching preprint items from Zotero…
+2026-04-21 07:00:43,900 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:49,607 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:51,457 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:51,459 INFO       → 247 items fetched
+2026-04-21 07:00:51,462 INFO     Total Zotero papers: 554
+2026-04-21 07:00:51,463 INFO     Zotero library contains 554 paper(s).
+2026-04-21 07:00:53,556 INFO     0 new paper(s) added to the database.
+2026-04-21 07:00:53,556 INFO     Syncing Zotero collections…
+2026-04-21 07:00:53,556 INFO     Fetching Zotero collections…
+2026-04-21 07:00:54,799 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:55,225 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-21 07:00:55,226 INFO     Fetched 119 collection(s).
+2026-04-21 07:00:57,000 INFO     Collection memberships synced for 554 paper(s).
+2026-04-21 07:00:57,002 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-21 07:00:57,002 INFO     All Zotero papers are already embedded.
+2026-04-22 07:00:04,133 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-22 07:00:08,000 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-22 07:00:08,135 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-22 07:00:08,136 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-22 07:00:08,147 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:08,227 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:08,238 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:08,239 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-22 07:00:08,320 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:08,330 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:08,407 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:08,417 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-22 07:00:08,499 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:08,509 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:08,594 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:08,606 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:08,688 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-22 07:00:08,764 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:08,773 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  52%|█████▏    | 103/199 [00:00<00:00, 1019.41it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1713.83it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-22 07:00:09,099 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-22 07:00:09,193 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-22 07:00:09,273 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-22 07:00:09,370 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-22 07:00:09,445 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:09,453 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:09,535 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:09,546 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:09,627 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:09,638 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:09,720 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:09,729 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:09,816 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-22 07:00:09,900 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-22 07:00:10,022 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-22 07:00:10,029 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-22 07:00:10,129 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-22 07:00:10,649 INFO     LocalEmbedder: model ready
+2026-04-22 07:00:10,650 INFO     Fetching papers from Zotero…
+2026-04-22 07:00:10,650 INFO     Fetching journalArticle items from Zotero…
+2026-04-22 07:00:15,374 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:21,207 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:26,085 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:26,088 INFO       → 269 items fetched
+2026-04-22 07:00:26,088 INFO     Fetching conferencePaper items from Zotero…
+2026-04-22 07:00:28,333 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:28,335 INFO       → 38 items fetched
+2026-04-22 07:00:28,335 INFO     Fetching preprint items from Zotero…
+2026-04-22 07:00:35,197 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:38,766 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:41,518 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:41,519 INFO       → 247 items fetched
+2026-04-22 07:00:41,522 INFO     Total Zotero papers: 554
+2026-04-22 07:00:41,523 INFO     Zotero library contains 554 paper(s).
+2026-04-22 07:00:43,451 INFO     0 new paper(s) added to the database.
+2026-04-22 07:00:43,451 INFO     Syncing Zotero collections…
+2026-04-22 07:00:43,451 INFO     Fetching Zotero collections…
+2026-04-22 07:00:44,317 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:44,662 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-22 07:00:44,663 INFO     Fetched 119 collection(s).
+2026-04-22 07:00:46,509 INFO     Collection memberships synced for 554 paper(s).
+2026-04-22 07:00:46,511 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-22 07:00:46,511 INFO     All Zotero papers are already embedded.
+2026-04-23 07:00:04,202 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-23 07:00:08,181 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-23 07:00:08,330 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:08,338 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:08,421 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:08,431 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:08,431 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-23 07:00:08,518 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-23 07:00:08,518 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-23 07:00:08,526 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:08,607 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:08,618 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-23 07:00:08,701 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:08,710 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:08,789 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:08,800 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:08,880 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-23 07:00:08,963 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:08,975 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  55%|█████▌    | 110/199 [00:00<00:00, 1090.34it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1873.82it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-23 07:00:09,283 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-23 07:00:09,387 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-23 07:00:09,470 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-23 07:00:09,556 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-23 07:00:09,646 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:09,655 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:09,787 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:09,804 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:09,886 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:09,894 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:09,982 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:09,989 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:10,074 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-23 07:00:10,152 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-23 07:00:10,274 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-23 07:00:10,282 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-23 07:00:10,379 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-23 07:00:10,761 INFO     LocalEmbedder: model ready
+2026-04-23 07:00:10,761 INFO     Fetching papers from Zotero…
+2026-04-23 07:00:10,761 INFO     Fetching journalArticle items from Zotero…
+2026-04-23 07:00:21,301 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:26,230 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:31,721 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:31,723 INFO       → 269 items fetched
+2026-04-23 07:00:31,723 INFO     Fetching conferencePaper items from Zotero…
+2026-04-23 07:00:34,467 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:34,468 INFO       → 38 items fetched
+2026-04-23 07:00:34,468 INFO     Fetching preprint items from Zotero…
+2026-04-23 07:00:37,723 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:40,355 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:41,907 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:41,909 INFO       → 247 items fetched
+2026-04-23 07:00:41,912 INFO     Total Zotero papers: 554
+2026-04-23 07:00:41,914 INFO     Zotero library contains 554 paper(s).
+2026-04-23 07:00:43,849 INFO     0 new paper(s) added to the database.
+2026-04-23 07:00:43,849 INFO     Syncing Zotero collections…
+2026-04-23 07:00:43,849 INFO     Fetching Zotero collections…
+2026-04-23 07:00:45,870 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:46,369 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-23 07:00:46,369 INFO     Fetched 119 collection(s).
+2026-04-23 07:00:48,207 INFO     Collection memberships synced for 554 paper(s).
+2026-04-23 07:00:48,209 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-23 07:00:48,210 INFO     All Zotero papers are already embedded.
+2026-04-24 07:00:04,372 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-24 07:00:08,272 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-24 07:00:08,422 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:08,435 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:08,525 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:08,533 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:08,534 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-24 07:00:08,621 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:08,630 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:08,730 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:08,737 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-24 07:00:08,834 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-24 07:00:08,834 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-24 07:00:08,842 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:08,940 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:08,951 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:09,080 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-24 07:00:09,172 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:09,181 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  52%|█████▏    | 104/199 [00:00<00:00, 1025.76it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1799.61it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-24 07:00:09,510 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-24 07:00:09,643 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-24 07:00:09,735 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-24 07:00:09,833 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-24 07:00:09,922 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:09,930 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:10,025 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:10,033 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:10,148 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:10,158 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:10,253 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:10,264 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:10,359 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-24 07:00:10,456 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-24 07:00:10,594 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-24 07:00:10,602 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-24 07:00:10,698 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-24 07:00:11,066 INFO     LocalEmbedder: model ready
+2026-04-24 07:00:11,066 INFO     Fetching papers from Zotero…
+2026-04-24 07:00:11,066 INFO     Fetching journalArticle items from Zotero…
+2026-04-24 07:00:20,000 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:23,706 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:28,616 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:28,618 INFO       → 269 items fetched
+2026-04-24 07:00:28,618 INFO     Fetching conferencePaper items from Zotero…
+2026-04-24 07:00:30,980 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:30,982 INFO       → 38 items fetched
+2026-04-24 07:00:30,982 INFO     Fetching preprint items from Zotero…
+2026-04-24 07:00:35,120 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:42,425 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:45,016 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:45,018 INFO       → 247 items fetched
+2026-04-24 07:00:45,020 INFO     Total Zotero papers: 554
+2026-04-24 07:00:45,021 INFO     Zotero library contains 554 paper(s).
+2026-04-24 07:00:46,734 INFO     0 new paper(s) added to the database.
+2026-04-24 07:00:46,734 INFO     Syncing Zotero collections…
+2026-04-24 07:00:46,734 INFO     Fetching Zotero collections…
+2026-04-24 07:00:48,053 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:48,415 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-24 07:00:48,415 INFO     Fetched 119 collection(s).
+2026-04-24 07:00:50,042 INFO     Collection memberships synced for 554 paper(s).
+2026-04-24 07:00:50,053 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-24 07:00:50,053 INFO     All Zotero papers are already embedded.
+2026-04-27 07:00:03,905 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-27 07:00:08,601 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-27 07:00:08,781 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:08,802 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:08,905 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-27 07:00:08,906 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-27 07:00:08,921 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:08,922 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-27 07:00:09,017 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:09,032 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:09,130 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:09,144 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-27 07:00:09,245 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:09,260 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:09,348 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:09,364 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:09,456 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-27 07:00:09,548 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:09,564 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  34%|███▎      | 67/199 [00:00<00:00, 662.33it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1447.69it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-27 07:00:09,947 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-27 07:00:10,039 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-27 07:00:10,133 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-27 07:00:10,222 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-27 07:00:10,315 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:10,332 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:10,423 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:10,440 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:10,533 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:10,550 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:10,663 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:10,684 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:10,810 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-27 07:00:10,907 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-27 07:00:11,050 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-27 07:00:11,066 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-27 07:00:11,164 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-27 07:00:11,731 INFO     LocalEmbedder: model ready
+2026-04-27 07:00:11,731 INFO     Fetching papers from Zotero…
+2026-04-27 07:00:11,731 INFO     Fetching journalArticle items from Zotero…
+2026-04-27 07:00:17,568 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:20,576 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:24,257 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:24,259 INFO       → 269 items fetched
+2026-04-27 07:00:24,259 INFO     Fetching conferencePaper items from Zotero…
+2026-04-27 07:00:26,475 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:26,476 INFO       → 38 items fetched
+2026-04-27 07:00:26,476 INFO     Fetching preprint items from Zotero…
+2026-04-27 07:00:29,861 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:37,325 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:39,203 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:39,205 INFO       → 247 items fetched
+2026-04-27 07:00:39,207 INFO     Total Zotero papers: 554
+2026-04-27 07:00:39,209 INFO     Zotero library contains 554 paper(s).
+2026-04-27 07:00:41,258 INFO     0 new paper(s) added to the database.
+2026-04-27 07:00:41,259 INFO     Syncing Zotero collections…
+2026-04-27 07:00:41,259 INFO     Fetching Zotero collections…
+2026-04-27 07:00:42,064 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:42,272 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-27 07:00:42,273 INFO     Fetched 119 collection(s).
+2026-04-27 07:00:44,194 INFO     Collection memberships synced for 554 paper(s).
+2026-04-27 07:00:44,197 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-04-27 07:00:44,197 INFO     All Zotero papers are already embedded.
+2026-04-28 07:00:04,456 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-28 07:00:09,189 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-28 07:00:09,324 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:09,334 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:09,416 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:09,425 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:09,427 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-28 07:00:09,509 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:09,518 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:09,594 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-28 07:00:09,594 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-28 07:00:09,602 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-28 07:00:09,686 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:09,694 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:09,829 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:09,838 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:09,918 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-28 07:00:09,995 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:10,007 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  43%|████▎     | 85/199 [00:00<00:00, 825.37it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1637.75it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-28 07:00:10,369 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-28 07:00:10,463 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-28 07:00:10,550 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-28 07:00:10,630 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-28 07:00:10,710 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:10,722 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:10,801 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:10,810 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:10,919 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:10,929 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:11,009 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:11,094 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:11,178 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-28 07:00:11,257 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-28 07:00:11,470 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-28 07:00:11,484 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-28 07:00:11,575 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-28 07:00:12,546 INFO     LocalEmbedder: model ready
+2026-04-28 07:00:12,546 INFO     Fetching papers from Zotero…
+2026-04-28 07:00:12,546 INFO     Fetching journalArticle items from Zotero…
+2026-04-28 07:00:19,061 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:24,476 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:28,385 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:28,388 INFO       → 269 items fetched
+2026-04-28 07:00:28,388 INFO     Fetching conferencePaper items from Zotero…
+2026-04-28 07:00:30,497 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:30,499 INFO       → 38 items fetched
+2026-04-28 07:00:30,499 INFO     Fetching preprint items from Zotero…
+2026-04-28 07:00:36,624 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:42,862 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:45,387 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:45,388 INFO       → 248 items fetched
+2026-04-28 07:00:45,391 INFO     Total Zotero papers: 555
+2026-04-28 07:00:45,392 INFO     Zotero library contains 555 paper(s).
+2026-04-28 07:00:47,711 INFO     2 new paper(s) added to the database.
+2026-04-28 07:00:47,712 INFO     Syncing Zotero collections…
+2026-04-28 07:00:47,712 INFO     Fetching Zotero collections…
+2026-04-28 07:00:48,730 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:49,163 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-28 07:00:49,164 INFO     Fetched 119 collection(s).
+2026-04-28 07:00:51,112 INFO     Collection memberships synced for 555 paper(s).
+2026-04-28 07:00:51,115 INFO     2 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.79it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.79it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 16.00it/s]
+2026-04-28 07:00:51,761 INFO       Embedded 2/2 paper(s)…
+2026-04-28 07:00:51,761 INFO     Done. 2 paper(s) embedded, 0 error(s).
+2026-04-28 07:00:52,687 INFO     Recomputed 115 collection centroid(s).
+2026-04-29 07:00:04,840 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-29 07:00:11,140 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-29 07:00:11,305 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:11,319 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:11,401 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:11,414 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:11,415 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-29 07:00:11,497 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:11,510 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:11,591 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-29 07:00:11,591 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-29 07:00:11,601 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-29 07:00:11,683 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:11,692 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:11,777 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:11,789 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:11,892 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-29 07:00:11,973 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:11,981 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  47%|████▋     | 93/199 [00:00<00:00, 928.40it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1632.31it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-29 07:00:12,323 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-29 07:00:12,406 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-29 07:00:12,490 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-29 07:00:12,581 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-29 07:00:12,669 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:12,681 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:12,763 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:12,773 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:12,858 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:12,869 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:12,952 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:12,961 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:13,047 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-29 07:00:13,143 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-29 07:00:13,291 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 07:00:13,300 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-29 07:00:13,489 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-29 07:00:14,519 INFO     LocalEmbedder: model ready
+2026-04-29 07:00:14,519 INFO     Fetching papers from Zotero…
+2026-04-29 07:00:14,519 INFO     Fetching journalArticle items from Zotero…
+2026-04-29 07:00:24,004 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:30,424 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:33,406 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:33,409 INFO       → 274 items fetched
+2026-04-29 07:00:33,409 INFO     Fetching conferencePaper items from Zotero…
+2026-04-29 07:00:35,410 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:35,412 INFO       → 38 items fetched
+2026-04-29 07:00:35,412 INFO     Fetching preprint items from Zotero…
+2026-04-29 07:00:43,844 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:47,557 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:50,195 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:50,198 INFO       → 264 items fetched
+2026-04-29 07:00:50,202 INFO     Total Zotero papers: 576
+2026-04-29 07:00:50,203 INFO     Zotero library contains 576 paper(s).
+2026-04-29 07:00:52,201 INFO     21 new paper(s) added to the database.
+2026-04-29 07:00:52,201 INFO     Syncing Zotero collections…
+2026-04-29 07:00:52,201 INFO     Fetching Zotero collections…
+2026-04-29 07:00:53,937 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:54,442 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-29 07:00:54,442 INFO     Fetched 125 collection(s).
+2026-04-29 07:00:56,260 INFO     Collection memberships synced for 576 paper(s).
+2026-04-29 07:00:56,263 INFO     21 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.47it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.47it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 45.20it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 30.92it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 18.29it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 24.89it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 50.30it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 22.15it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 43.64it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 30.76it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 100.10it/s]
+2026-04-29 07:00:57,018 INFO       Embedded 10/21 paper(s)…
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.67it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 51.18it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 109.84it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 114.31it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 101.54it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 112.59it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 113.24it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 108.93it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 112.76it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.75it/s]
+2026-04-29 07:00:57,199 INFO       Embedded 20/21 paper(s)…
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 109.18it/s]
+2026-04-29 07:00:57,214 INFO       Embedded 21/21 paper(s)…
+2026-04-29 07:00:57,214 INFO     Done. 21 paper(s) embedded, 0 error(s).
+2026-04-29 07:00:57,908 INFO     Recomputed 121 collection centroid(s).
+2026-04-30 07:00:05,287 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-04-30 07:00:11,389 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-04-30 07:00:11,590 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:11,600 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:11,695 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-30 07:00:11,695 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-30 07:00:11,703 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:11,704 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-04-30 07:00:11,800 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:11,812 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:11,903 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:11,912 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-04-30 07:00:12,006 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:12,015 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:12,108 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:12,116 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:12,232 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-30 07:00:12,329 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:12,339 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  43%|████▎     | 86/199 [00:00<00:00, 855.70it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1691.17it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-30 07:00:12,700 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-30 07:00:12,799 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-30 07:00:12,890 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-30 07:00:12,987 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-30 07:00:13,080 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:13,087 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:13,182 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:13,191 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:13,285 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:13,296 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:13,389 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:13,399 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:13,495 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-30 07:00:13,592 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-30 07:00:13,741 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-30 07:00:13,751 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-30 07:00:13,855 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-04-30 07:00:14,898 INFO     LocalEmbedder: model ready
+2026-04-30 07:00:14,898 INFO     Fetching papers from Zotero…
+2026-04-30 07:00:14,898 INFO     Fetching journalArticle items from Zotero…
+2026-04-30 07:00:22,449 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:28,781 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:33,693 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:33,695 INFO       → 274 items fetched
+2026-04-30 07:00:33,696 INFO     Fetching conferencePaper items from Zotero…
+2026-04-30 07:00:35,872 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:35,873 INFO       → 39 items fetched
+2026-04-30 07:00:35,874 INFO     Fetching preprint items from Zotero…
+2026-04-30 07:00:43,624 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:46,862 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:50,241 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:50,243 INFO       → 268 items fetched
+2026-04-30 07:00:50,246 INFO     Total Zotero papers: 581
+2026-04-30 07:00:50,247 INFO     Zotero library contains 581 paper(s).
+2026-04-30 07:00:52,087 INFO     5 new paper(s) added to the database.
+2026-04-30 07:00:52,087 INFO     Syncing Zotero collections…
+2026-04-30 07:00:52,087 INFO     Fetching Zotero collections…
+2026-04-30 07:00:52,861 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:53,424 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-04-30 07:00:53,425 INFO     Fetched 125 collection(s).
+2026-04-30 07:00:55,343 INFO     Collection memberships synced for 581 paper(s).
+2026-04-30 07:00:55,346 INFO     5 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.44it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.44it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.75it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 32.14it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 13.70it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 42.35it/s]
+2026-04-30 07:00:56,385 INFO       Embedded 5/5 paper(s)…
+2026-04-30 07:00:56,385 INFO     Done. 5 paper(s) embedded, 0 error(s).
+2026-04-30 07:00:56,977 INFO     Recomputed 121 collection centroid(s).
+2026-05-01 07:00:06,529 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-05-01 07:00:14,192 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-05-01 07:00:14,419 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:14,430 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:14,545 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:14,555 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:14,556 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-05-01 07:00:14,635 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-01 07:00:14,636 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-01 07:00:14,645 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:14,725 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:14,734 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-05-01 07:00:14,820 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:14,830 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:14,912 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:14,922 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:15,015 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 07:00:15,100 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:15,109 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  39%|███▊      | 77/199 [00:00<00:00, 740.29it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1423.82it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-01 07:00:15,527 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 07:00:15,606 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 07:00:15,686 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 07:00:15,786 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-01 07:00:15,868 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:15,879 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:15,960 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:15,971 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:16,059 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:16,069 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:16,149 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:16,157 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:16,239 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-01 07:00:16,323 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-01 07:00:16,454 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-01 07:00:16,461 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-01 07:00:16,548 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-05-01 07:00:17,650 INFO     LocalEmbedder: model ready
+2026-05-01 07:00:17,650 INFO     Fetching papers from Zotero…
+2026-05-01 07:00:17,650 INFO     Fetching journalArticle items from Zotero…
+2026-05-01 07:00:23,439 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:29,039 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:34,004 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:34,006 INFO       → 274 items fetched
+2026-05-01 07:00:34,006 INFO     Fetching conferencePaper items from Zotero…
+2026-05-01 07:00:36,241 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:36,242 INFO       → 39 items fetched
+2026-05-01 07:00:36,242 INFO     Fetching preprint items from Zotero…
+2026-05-01 07:00:43,125 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:49,174 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:53,152 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:53,155 INFO       → 268 items fetched
+2026-05-01 07:00:53,159 INFO     Total Zotero papers: 581
+2026-05-01 07:00:53,160 INFO     Zotero library contains 581 paper(s).
+2026-05-01 07:00:55,410 INFO     0 new paper(s) added to the database.
+2026-05-01 07:00:55,410 INFO     Syncing Zotero collections…
+2026-05-01 07:00:55,410 INFO     Fetching Zotero collections…
+2026-05-01 07:00:56,263 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:56,781 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-01 07:00:56,781 INFO     Fetched 125 collection(s).
+2026-05-01 07:00:58,819 INFO     Collection memberships synced for 581 paper(s).
+2026-05-01 07:00:58,822 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-05-01 07:00:58,822 INFO     All Zotero papers are already embedded.
+2026-05-04 07:00:08,768 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-05-04 07:00:15,539 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-05-04 07:01:35,712 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+'[Errno 101] Network is unreachable' thrown while requesting HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json
+2026-05-04 07:08:56,379 WARNING  '[Errno 101] Network is unreachable' thrown while requesting HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json
+Retrying in 1s [Retry 1/5].
+2026-05-04 07:08:56,392 WARNING  Retrying in 1s [Retry 1/5].
+2026-05-04 07:08:57,421 ERROR    Unhandled error in update_zotero.
+Traceback (most recent call last):
+  File "/home/admin-linux/projects/auto-arxiv-feed/scripts/update_zotero.py", line 233, in main
+    run(config, dry_run=args.dry_run)
+  File "/home/admin-linux/projects/auto-arxiv-feed/scripts/update_zotero.py", line 74, in run
+    embedder = get_embedder(
+               ^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/embeddings.py", line 33, in get_embedder
+    return LocalEmbedder(model=model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/embeddings.py", line 271, in __init__
+    self._load_model()
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/embeddings.py", line 290, in _load_model
+    self._st_model = SentenceTransformer(self._model_name, device=self._device)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/sentence_transformer/model.py", line 183, in __init__
+    super().__init__(
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 198, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 969, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 1160, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 1708, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 628, in __init__
+    config, is_peft_model = self._load_config(model_name_or_path, backend, config_kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 1354, in _load_config
+    adapter_config_file = find_adapter_config_file(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/peft_utils.py", line 84, in find_adapter_config_file
+    adapter_cached_filename = cached_file(
+                              ^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/hub.py", line 512, in cached_files
+    raise e
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1130, in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+               ^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+    return next(
+           ^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+Traceback (most recent call last):
+  File "/home/admin-linux/projects/auto-arxiv-feed/scripts/update_zotero.py", line 233, in main
+    run(config, dry_run=args.dry_run)
+  File "/home/admin-linux/projects/auto-arxiv-feed/scripts/update_zotero.py", line 74, in run
+    embedder = get_embedder(
+               ^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/embeddings.py", line 33, in get_embedder
+    return LocalEmbedder(model=model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/embeddings.py", line 271, in __init__
+    self._load_model()
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/embeddings.py", line 290, in _load_model
+    self._st_model = SentenceTransformer(self._model_name, device=self._device)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/sentence_transformer/model.py", line 183, in __init__
+    super().__init__(
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 198, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 969, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 1160, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 1708, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 628, in __init__
+    config, is_peft_model = self._load_config(model_name_or_path, backend, config_kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 1354, in _load_config
+    adapter_config_file = find_adapter_config_file(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/peft_utils.py", line 84, in find_adapter_config_file
+    adapter_cached_filename = cached_file(
+                              ^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/hub.py", line 512, in cached_files
+    raise e
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 997, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1130, in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1669, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1591, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+               ^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+    return next(
+           ^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/admin-linux/projects/auto-arxiv-feed/.venv/lib/python3.12/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/admin-linux/projects/auto-arxiv-feed/scripts/update_zotero.py", line 264, in <module>
+    main()
+  File "/home/admin-linux/projects/auto-arxiv-feed/scripts/update_zotero.py", line 245, in main
+    send_error_notification(
+  File "/home/admin-linux/projects/auto-arxiv-feed/src/email_digest.py", line 160, in send_error_notification
+    with smtplib.SMTP(smtp_host, smtp_port) as server:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.12/socket.py", line 837, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+2026-05-05 07:00:03,997 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-05-05 07:00:07,810 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-05-05 07:00:07,957 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:07,971 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:08,065 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:08,075 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:08,075 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-05-05 07:00:08,167 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:08,174 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:08,265 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-05 07:00:08,266 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-05 07:00:08,275 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-05-05 07:00:08,370 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:08,378 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:08,475 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:08,486 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:08,582 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-05 07:00:08,675 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:08,686 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  51%|█████     | 101/199 [00:00<00:00, 1007.72it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1869.14it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-05 07:00:09,024 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-05 07:00:09,134 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-05 07:00:09,228 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-05 07:00:09,324 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-05 07:00:09,416 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:09,425 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:09,518 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:09,529 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:09,627 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:09,637 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:09,731 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:09,741 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:09,844 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-05 07:00:09,948 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-05 07:00:10,092 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-05 07:00:10,103 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-05 07:00:10,219 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-05-05 07:00:10,610 INFO     LocalEmbedder: model ready
+2026-05-05 07:00:10,610 INFO     Fetching papers from Zotero…
+2026-05-05 07:00:10,610 INFO     Fetching journalArticle items from Zotero…
+2026-05-05 07:00:18,576 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:25,484 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:28,202 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:28,205 INFO       → 274 items fetched
+2026-05-05 07:00:28,205 INFO     Fetching conferencePaper items from Zotero…
+2026-05-05 07:00:30,481 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:30,482 INFO       → 39 items fetched
+2026-05-05 07:00:30,482 INFO     Fetching preprint items from Zotero…
+2026-05-05 07:00:37,518 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:40,972 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:43,445 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:43,447 INFO       → 268 items fetched
+2026-05-05 07:00:43,450 INFO     Total Zotero papers: 581
+2026-05-05 07:00:43,451 INFO     Zotero library contains 581 paper(s).
+2026-05-05 07:00:45,305 INFO     0 new paper(s) added to the database.
+2026-05-05 07:00:45,305 INFO     Syncing Zotero collections…
+2026-05-05 07:00:45,305 INFO     Fetching Zotero collections…
+2026-05-05 07:00:46,848 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:47,279 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-05 07:00:47,280 INFO     Fetched 125 collection(s).
+2026-05-05 07:00:48,982 INFO     Collection memberships synced for 581 paper(s).
+2026-05-05 07:00:48,984 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-05-05 07:00:48,985 INFO     All Zotero papers are already embedded.
+2026-05-06 07:00:03,810 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-05-06 07:00:07,566 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-05-06 07:00:07,732 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:07,751 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:07,844 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:07,863 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:07,864 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-05-06 07:00:07,956 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:07,973 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:08,065 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:08,081 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-05-06 07:00:08,170 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:08,185 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:08,282 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:08,297 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:08,392 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-06 07:00:08,392 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-06 07:00:08,486 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:08,502 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  48%|████▊     | 95/199 [00:00<00:00, 945.52it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1844.50it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-06 07:00:09,070 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-06 07:00:09,167 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-06 07:00:09,259 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-06 07:00:09,361 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-06 07:00:09,450 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:09,468 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:09,560 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:09,577 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:09,673 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:09,688 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:09,783 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:09,801 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:09,902 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-06 07:00:10,001 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-06 07:00:10,148 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 07:00:10,164 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-06 07:00:10,263 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-05-06 07:00:10,672 INFO     LocalEmbedder: model ready
+2026-05-06 07:00:10,672 INFO     Fetching papers from Zotero…
+2026-05-06 07:00:10,672 INFO     Fetching journalArticle items from Zotero…
+2026-05-06 07:00:19,282 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:25,306 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:30,879 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:30,882 INFO       → 274 items fetched
+2026-05-06 07:00:30,882 INFO     Fetching conferencePaper items from Zotero…
+2026-05-06 07:00:33,532 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:33,534 INFO       → 39 items fetched
+2026-05-06 07:00:33,534 INFO     Fetching preprint items from Zotero…
+2026-05-06 07:00:39,404 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:44,910 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:47,662 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:47,665 INFO       → 268 items fetched
+2026-05-06 07:00:47,668 INFO     Total Zotero papers: 581
+2026-05-06 07:00:47,669 INFO     Zotero library contains 581 paper(s).
+2026-05-06 07:00:49,500 INFO     0 new paper(s) added to the database.
+2026-05-06 07:00:49,500 INFO     Syncing Zotero collections…
+2026-05-06 07:00:49,500 INFO     Fetching Zotero collections…
+2026-05-06 07:00:50,630 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:51,130 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-06 07:00:51,130 INFO     Fetched 125 collection(s).
+2026-05-06 07:00:52,815 INFO     Collection memberships synced for 581 paper(s).
+2026-05-06 07:00:52,818 INFO     0 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+2026-05-06 07:00:52,818 INFO     All Zotero papers are already embedded.
+2026-05-07 07:00:03,756 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-05-07 07:00:07,882 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-05-07 07:00:08,027 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-07 07:00:08,028 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-07 07:00:08,037 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:08,120 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:08,129 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:08,130 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-05-07 07:00:08,211 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:08,222 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:08,300 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:08,311 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-05-07 07:00:08,394 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:08,404 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:08,487 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:08,497 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:08,584 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 07:00:08,667 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:08,680 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  49%|████▉     | 98/199 [00:00<00:00, 978.03it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1838.82it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-07 07:00:09,002 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 07:00:09,086 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 07:00:09,188 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 07:00:09,274 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-07 07:00:09,402 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:09,416 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:09,495 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:09,507 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:09,588 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:09,599 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:09,678 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:09,688 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:09,777 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-07 07:00:09,867 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-07 07:00:09,996 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-07 07:00:10,006 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-07 07:00:10,097 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-05-07 07:00:10,655 INFO     LocalEmbedder: model ready
+2026-05-07 07:00:10,655 INFO     Fetching papers from Zotero…
+2026-05-07 07:00:10,655 INFO     Fetching journalArticle items from Zotero…
+2026-05-07 07:00:17,549 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:23,147 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:26,404 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:26,406 INFO       → 274 items fetched
+2026-05-07 07:00:26,406 INFO     Fetching conferencePaper items from Zotero…
+2026-05-07 07:00:30,007 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:30,009 INFO       → 39 items fetched
+2026-05-07 07:00:30,009 INFO     Fetching preprint items from Zotero…
+2026-05-07 07:00:34,796 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:40,922 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:45,631 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:45,633 INFO       → 270 items fetched
+2026-05-07 07:00:45,636 INFO     Total Zotero papers: 583
+2026-05-07 07:00:45,637 INFO     Zotero library contains 583 paper(s).
+2026-05-07 07:00:47,414 INFO     2 new paper(s) added to the database.
+2026-05-07 07:00:47,415 INFO     Syncing Zotero collections…
+2026-05-07 07:00:47,415 INFO     Fetching Zotero collections…
+2026-05-07 07:00:48,956 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:49,324 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-07 07:00:49,324 INFO     Fetched 125 collection(s).
+2026-05-07 07:00:50,894 INFO     Collection memberships synced for 583 paper(s).
+2026-05-07 07:00:50,896 INFO     2 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.82it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.82it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 28.79it/s]
+2026-05-07 07:00:51,301 INFO       Embedded 2/2 paper(s)…
+2026-05-07 07:00:51,301 INFO     Done. 2 paper(s) embedded, 0 error(s).
+2026-05-07 07:00:51,790 INFO     Recomputed 121 collection centroid(s).
+2026-05-08 07:00:03,491 INFO     LocalEmbedder: CUDA GPU detected via WSL2 passthrough — 'NVIDIA GeForce RTX 3080'
+2026-05-08 07:00:07,370 INFO     LocalEmbedder: loading 'BAAI/bge-small-en-v1.5' on device 'cuda'
+2026-05-08 07:00:07,538 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-08 07:00:07,538 WARNING  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-05-08 07:00:07,557 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:07,649 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:07,665 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:07,666 INFO     Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+2026-05-08 07:00:07,764 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:07,782 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:07,877 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:07,891 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+2026-05-08 07:00:07,987 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:08,004 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:08,097 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:08,112 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:08,211 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-05-08 07:00:08,302 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:08,319 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  51%|█████     | 101/199 [00:00<00:00, 1003.52it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1861.18it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-small-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-05-08 07:00:08,650 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-05-08 07:00:08,752 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-08 07:00:08,845 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-08 07:00:08,963 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-05-08 07:00:09,053 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:09,071 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:09,161 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:09,178 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:09,270 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:09,286 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:09,382 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:09,399 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:09,493 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-08 07:00:09,586 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-08 07:00:09,721 INFO     HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-05-08 07:00:09,738 INFO     HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-05-08 07:00:09,839 INFO     HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+2026-05-08 07:00:10,220 INFO     LocalEmbedder: model ready
+2026-05-08 07:00:10,220 INFO     Fetching papers from Zotero…
+2026-05-08 07:00:10,220 INFO     Fetching journalArticle items from Zotero…
+2026-05-08 07:00:14,983 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:20,251 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:22,156 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=journalArticle&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:22,158 INFO       → 274 items fetched
+2026-05-08 07:00:22,158 INFO     Fetching conferencePaper items from Zotero…
+2026-05-08 07:00:23,787 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=conferencePaper&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:23,789 INFO       → 39 items fetched
+2026-05-08 07:00:23,789 INFO     Fetching preprint items from Zotero…
+2026-05-08 07:00:27,125 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:31,540 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:33,885 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/items?itemType=preprint&limit=100&start=200&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:33,887 INFO       → 270 items fetched
+2026-05-08 07:00:33,891 INFO     Total Zotero papers: 583
+2026-05-08 07:00:33,892 INFO     Zotero library contains 583 paper(s).
+2026-05-08 07:00:35,724 INFO     1 new paper(s) added to the database.
+2026-05-08 07:00:35,724 INFO     Syncing Zotero collections…
+2026-05-08 07:00:35,724 INFO     Fetching Zotero collections…
+2026-05-08 07:00:36,705 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?format=json&limit=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:37,188 INFO     HTTP Request: GET https://api.zotero.org/users/9414548/collections?limit=100&start=100&locale=en-US "HTTP/1.1 200 OK"
+2026-05-08 07:00:37,189 INFO     Fetched 123 collection(s).
+2026-05-08 07:00:38,833 INFO     Collection memberships synced for 583 paper(s).
+2026-05-08 07:00:38,842 INFO     1 paper(s) need embedding with model 'local/BAAI/bge-small-en-v1.5'.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.06it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.05it/s]
+2026-05-08 07:00:39,176 INFO       Embedded 1/1 paper(s)…
+2026-05-08 07:00:39,176 INFO     Done. 1 paper(s) embedded, 0 error(s).
+2026-05-08 07:00:39,685 INFO     Recomputed 121 collection centroid(s).

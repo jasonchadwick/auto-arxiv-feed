@@ -14,6 +14,7 @@ import argparse
 import logging
 import os
 import sys
+import time
 import traceback
 from typing import Optional
 
@@ -49,6 +50,16 @@ def _api_key_for(emb_cfg: dict) -> Optional[str]:
     provider = emb_cfg.get("provider", "").lower()
     key_field = f"{provider}_api_key"
     return emb_cfg.get(key_field) or None
+
+
+def _resilience_config(config: Optional[dict]) -> dict:
+    return (config or {}).get("resilience") or {}
+
+
+def _should_retry(attempt: int, retry_forever: bool, max_attempts: int) -> bool:
+    if retry_forever:
+        return True
+    return attempt < max_attempts
 
 
 # ---------------------------------------------------------------------------
@@ -227,37 +238,77 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    config: Optional[dict] = None
     try:
         config = load_config(args.config)
-        run(config, dry_run=args.dry_run)
     except Exception as exc:  # noqa: BLE001
-        logger.exception("Unhandled error in update_zotero.")
-
-        if config is None:
-            try:
-                config = load_config(args.config)
-            except Exception:  # noqa: BLE001
-                config = None
-
-        email_cfg = (config or {}).get("email") or {}
-        if email_cfg.get("smtp_host"):
-            send_error_notification(
-                script_name="scripts/update_zotero.py",
-                error_message=str(exc),
-                traceback_text=traceback.format_exc(),
-                smtp_host=email_cfg.get("smtp_host", ""),
-                smtp_port=int(email_cfg.get("smtp_port", 587)),
-                smtp_user=email_cfg.get("smtp_user", ""),
-                smtp_password=email_cfg.get("smtp_password")
-                or os.environ.get("EMAIL_PASSWORD", ""),
-                from_address=email_cfg.get("from_address", ""),
-                to_address=email_cfg.get("to_address", ""),
-                subject_prefix=email_cfg.get("subject_prefix", "[arXiv Feed]"),
-                dry_run=args.dry_run,
-            )
-
+        logger.exception("Failed to load config: %s", args.config)
         raise SystemExit(1) from exc
+
+    resilience_cfg = _resilience_config(config)
+    retry_forever = bool(resilience_cfg.get("retry_until_success", False))
+    max_attempts = max(1, int(resilience_cfg.get("max_attempts", 3)))
+    retry_delay_seconds = max(1.0, float(resilience_cfg.get("retry_delay_seconds", 30)))
+    retry_backoff = max(1.0, float(resilience_cfg.get("retry_backoff", 2.0)))
+    max_retry_delay_seconds = max(
+        retry_delay_seconds,
+        float(resilience_cfg.get("max_retry_delay_seconds", 600)),
+    )
+
+    attempt = 0
+    delay = retry_delay_seconds
+    while True:
+        attempt += 1
+        try:
+            run(config, dry_run=args.dry_run)
+            if attempt > 1:
+                logger.info("update_zotero recovered after %d attempt(s).", attempt)
+            return
+        except Exception as exc:  # noqa: BLE001
+            logger.exception("Unhandled error in update_zotero (attempt %d).", attempt)
+
+            email_cfg = (config or {}).get("email") or {}
+            if email_cfg.get("smtp_host"):
+                send_error_notification(
+                    script_name="scripts/update_zotero.py",
+                    error_message=str(exc),
+                    traceback_text=traceback.format_exc(),
+                    smtp_host=email_cfg.get("smtp_host", ""),
+                    smtp_port=int(email_cfg.get("smtp_port", 587)),
+                    smtp_user=email_cfg.get("smtp_user", ""),
+                    smtp_password=email_cfg.get("smtp_password")
+                    or os.environ.get("EMAIL_PASSWORD", ""),
+                    from_address=email_cfg.get("from_address", ""),
+                    to_address=email_cfg.get("to_address", ""),
+                    subject_prefix=email_cfg.get("subject_prefix", "[arXiv Feed]"),
+                    dry_run=args.dry_run,
+                    max_attempts=int(resilience_cfg.get("error_email_max_attempts", 6)),
+                    retry_delay_seconds=float(
+                        resilience_cfg.get("error_email_retry_delay_seconds", 30)
+                    ),
+                    retry_backoff=float(resilience_cfg.get("error_email_retry_backoff", 2.0)),
+                    max_retry_delay_seconds=float(
+                        resilience_cfg.get("error_email_max_retry_delay_seconds", 300)
+                    ),
+                    fallback_log_path=str(
+                        resilience_cfg.get(
+                            "error_email_fallback_log_path",
+                            "log/unsent_error_notifications.log",
+                        )
+                    ),
+                )
+
+            if not _should_retry(attempt, retry_forever, max_attempts):
+                raise SystemExit(1) from exc
+
+            max_attempts_label = "inf" if retry_forever else str(max_attempts)
+            logger.warning(
+                "Retrying update_zotero in %.1f seconds (attempt %d/%s)...",
+                delay,
+                attempt + 1,
+                max_attempts_label,
+            )
+            time.sleep(delay)
+            delay = min(max_retry_delay_seconds, delay * retry_backoff)
 
 
 if __name__ == "__main__":

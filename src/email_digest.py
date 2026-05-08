@@ -2,13 +2,24 @@
 
 import logging
 import smtplib
+import time
 from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from html import escape
+from pathlib import Path
 from typing import Any, Dict, List
 
 logger = logging.getLogger(__name__)
+
+
+def _partition_papers_by_listing_status(
+    papers: List[Dict[str, Any]],
+) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Split papers into new listings and updates, preserving input order."""
+    new_listings = [paper for paper in papers if not paper.get("is_update")]
+    updates = [paper for paper in papers if paper.get("is_update")]
+    return new_listings, updates
 
 
 def send_digest(
@@ -51,7 +62,7 @@ def send_digest(
 
     today = datetime.now().strftime("%Y-%m-%d")
     n = len(sorted_papers)
-    subject = f"{subject_prefix} {n} new relevant paper{'s' if n != 1 else ''} – {today}"
+    subject = f"{subject_prefix} {n} relevant arXiv item{'s' if n != 1 else ''} – {today}"
 
     text_body = _build_text_body(sorted_papers, today)
     html_body = _build_html_body(sorted_papers, today)
@@ -82,7 +93,7 @@ def send_digest(
             server.sendmail(from_address, [to_address], msg.as_string())
         logger.info("Digest sent to %s (%d paper(s)).", to_address, n)
         return True
-    except smtplib.SMTPException as exc:
+    except Exception as exc:  # noqa: BLE001
         logger.error("Failed to send email: %s", exc)
         return False
 
@@ -99,6 +110,11 @@ def send_error_notification(
     to_address: str,
     subject_prefix: str = "[arXiv Feed]",
     dry_run: bool = False,
+    max_attempts: int = 3,
+    retry_delay_seconds: float = 30.0,
+    retry_backoff: float = 2.0,
+    max_retry_delay_seconds: float = 300.0,
+    fallback_log_path: str = "log/unsent_error_notifications.log",
 ) -> bool:
     """Send an email notifying that a script failed with an unhandled error."""
     if not smtp_host:
@@ -147,17 +163,81 @@ def send_error_notification(
     msg.attach(MIMEText(text_body, "plain"))
     msg.attach(MIMEText(html_body, "html"))
 
+    attempts = 0
+    delay = max(1.0, float(retry_delay_seconds))
+    infinite_retries = max_attempts <= 0
+
+    while True:
+        attempts += 1
+        try:
+            with smtplib.SMTP(smtp_host, smtp_port) as server:
+                server.ehlo()
+                server.starttls()
+                server.login(smtp_user, smtp_password)
+                server.sendmail(from_address, [to_address], msg.as_string())
+            logger.info("Error notification sent to %s.", to_address)
+            return True
+        except Exception as exc:  # noqa: BLE001
+            max_attempts_label = "inf" if infinite_retries else str(max_attempts)
+            logger.error(
+                "Failed to send error notification email (attempt %d/%s): %s",
+                attempts,
+                max_attempts_label,
+                exc,
+            )
+
+            if not infinite_retries and attempts >= max_attempts:
+                _write_unsent_error_notification(
+                    fallback_log_path=fallback_log_path,
+                    script_name=script_name,
+                    error_message=error_message,
+                    traceback_text=traceback_text,
+                    attempts=attempts,
+                    last_exception=exc,
+                )
+                return False
+
+            logger.warning(
+                "Retrying error notification email for %s in %.1f seconds...",
+                script_name,
+                delay,
+            )
+            time.sleep(delay)
+            delay = min(max_retry_delay_seconds, delay * max(1.0, retry_backoff))
+
+
+def _write_unsent_error_notification(
+    fallback_log_path: str,
+    script_name: str,
+    error_message: str,
+    traceback_text: str,
+    attempts: int,
+    last_exception: Exception,
+) -> None:
+    """Persist unsent error notifications so failures are not silent."""
     try:
-        with smtplib.SMTP(smtp_host, smtp_port) as server:
-            server.ehlo()
-            server.starttls()
-            server.login(smtp_user, smtp_password)
-            server.sendmail(from_address, [to_address], msg.as_string())
-        logger.info("Error notification sent to %s.", to_address)
-        return True
-    except smtplib.SMTPException as exc:
-        logger.error("Failed to send error notification email: %s", exc)
-        return False
+        path = Path(fallback_log_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        now = datetime.now().isoformat()
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write("\n" + "=" * 80 + "\n")
+            fh.write(f"time: {now}\n")
+            fh.write(f"script: {script_name}\n")
+            fh.write(f"send_attempts: {attempts}\n")
+            fh.write(f"last_send_exception: {last_exception}\n")
+            fh.write(f"error_message: {error_message}\n")
+            fh.write("traceback:\n")
+            fh.write(traceback_text.rstrip() + "\n")
+        logger.error(
+            "Error notification could not be delivered; wrote fallback record to %s.",
+            path,
+        )
+    except Exception as exc:  # noqa: BLE001
+        logger.error(
+            "Error notification fallback logging failed (%s): %s",
+            fallback_log_path,
+            exc,
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -167,48 +247,21 @@ def send_error_notification(
 
 def _build_text_body(papers: List[Dict[str, Any]], date: str) -> str:
     n = len(papers)
-    cluster_matched = [p for p in papers if not p.get("override_by_terms")]
-    keyword_overrides = [p for p in papers if p.get("override_by_terms")]
+    new_listings, updates = _partition_papers_by_listing_status(papers)
 
     lines = [
         f"arXiv Feed Digest – {date}",
         "=" * 50,
-        f"Found {n} relevant new paper{'s' if n != 1 else ''}.",
+        f"Found {n} relevant arXiv item{'s' if n != 1 else ''}.",
+        f"New listings: {len(new_listings)}",
+        f"Updates: {len(updates)}",
         "",
     ]
 
-    if cluster_matched:
-        lines.append("Cluster-matched items")
+    if new_listings:
+        lines.append("New listings")
         lines.append("-" * 50)
-        for i, paper in enumerate(cluster_matched, start=1):
-            title = paper.get("title") or "Unknown title"
-            authors = paper.get("authors") or []
-            url = paper.get("url") or ""
-            max_sim = paper.get("max_similarity", 0.0)
-            abstract = paper.get("abstract") or ""
-
-            lines.append(f"{i}. {title}")
-            if authors:
-                lines.append(f"   Authors:    {', '.join(authors)}")
-            lines.append(f"   URL:        {url}")
-            lines.append(f"   Similarity: {max_sim:.4f}")
-            if abstract:
-                snippet = abstract[:300] + ("…" if len(abstract) > 300 else "")
-                lines.append(f"   Abstract:   {snippet}")
-            closest_col = paper.get("closest_collection") or ""
-            col_score = paper.get("closest_collection_score", 0.0)
-            if closest_col:
-                lines.append(f"   Collection: {closest_col} ({col_score:.3f})")
-            lines.append("")
-
-    if keyword_overrides:
-        lines.append("Items not in clusters but overridden by keyword")
-        lines.append("-" * 50)
-        lines.append(
-            "These matched always-include keywords but were below the LOF threshold."
-        )
-        lines.append("")
-        for i, paper in enumerate(keyword_overrides, start=1):
+        for i, paper in enumerate(new_listings, start=1):
             title = paper.get("title") or "Unknown title"
             authors = paper.get("authors") or []
             url = paper.get("url") or ""
@@ -221,7 +274,7 @@ def _build_text_body(papers: List[Dict[str, Any]], date: str) -> str:
                 lines.append(f"   Authors:    {', '.join(authors)}")
             lines.append(f"   URL:        {url}")
             lines.append(f"   Similarity: {max_sim:.4f}")
-            if override_terms:
+            if paper.get("override_by_terms") and override_terms:
                 lines.append(f"   Override:   keyword(s): {', '.join(override_terms)}")
             if abstract:
                 snippet = abstract[:300] + ("…" if len(abstract) > 300 else "")
@@ -231,6 +284,13 @@ def _build_text_body(papers: List[Dict[str, Any]], date: str) -> str:
             if closest_col:
                 lines.append(f"   Collection: {closest_col} ({col_score:.3f})")
             lines.append("")
+
+    if updates:
+        lines.append("Updates")
+        lines.append("-" * 50)
+        for i, paper in enumerate(updates, start=1):
+            title = paper.get("title") or "Unknown title"
+            lines.append(f"{i}. {title}")
 
     return "\n".join(lines)
 
@@ -297,21 +357,37 @@ def _render_html_cards(items: List[Dict[str, Any]], start_idx: int = 1) -> List[
 
 def _build_html_body(papers: List[Dict[str, Any]], date: str) -> str:
     n = len(papers)
-    cluster_matched = [p for p in papers if not p.get("override_by_terms")]
-    keyword_overrides = [p for p in papers if p.get("override_by_terms")]
+    new_listings, updates = _partition_papers_by_listing_status(papers)
 
-    main_html = _render_html_cards(cluster_matched, start_idx=1)
-    override_html: List[str] = []
-    if keyword_overrides:
-        override_html.append(
+    main_html: List[str] = []
+    if new_listings:
+        main_html.append(
             """
             <section class="section-header">
-              <h2>Items not in clusters but overridden by keyword</h2>
-              <p>These matched always-include keywords but scored below the LOF threshold.</p>
+              <h2>New listings</h2>
+              <p>Full details for newly listed papers, including keyword-fallback matches.</p>
             </section>
             """
         )
-        override_html.extend(_render_html_cards(keyword_overrides, start_idx=1))
+        main_html.extend(_render_html_cards(new_listings, start_idx=1))
+
+    updates_html: List[str] = []
+    if updates:
+        update_items = "".join(
+            f'<li><a href="{escape(paper.get("url") or "#")}">{escape(paper.get("title") or "Unknown title")}</a></li>'
+            for paper in updates
+        )
+        updates_html.append(
+            f"""
+            <section class="section-header">
+              <h2>Updates</h2>
+              <p>Updated versions of already-listed arXiv papers.</p>
+            </section>
+            <section class="updates-list-wrap">
+              <ol class="updates-list">{update_items}</ol>
+            </section>
+            """
+        )
 
     return f"""
         <html>
@@ -426,16 +502,31 @@ def _build_html_body(papers: List[Dict[str, Any]], date: str) -> str:
                     font-size: 13px;
                     color: #7a2600;
                 }}
+                .updates-list-wrap {{
+                    background: #ffffff;
+                    border: 1px solid #d8e2ec;
+                    border-radius: 12px;
+                    padding: 10px 18px;
+                    box-shadow: 0 2px 8px rgba(15, 58, 95, 0.08);
+                }}
+                .updates-list {{
+                    margin: 6px 0;
+                    padding-left: 22px;
+                }}
+                .updates-list li {{
+                    margin: 8px 0;
+                    line-height: 1.5;
+                }}
             </style>
         </head>
         <body>
             <div class="container">
                 <section class="header">
                     <h1>arXiv Feed Digest - {date}</h1>
-                    <p>Found <strong>{n}</strong> relevant new paper{'s' if n != 1 else ''}, sorted by relevance score.</p>
+                    <p>Found <strong>{n}</strong> relevant arXiv item{'s' if n != 1 else ''}: <strong>{len(new_listings)}</strong> new listing{'s' if len(new_listings) != 1 else ''} and <strong>{len(updates)}</strong> update{'s' if len(updates) != 1 else ''}.</p>
                 </section>
                 {''.join(main_html)}
-                {''.join(override_html)}
+                {''.join(updates_html)}
             </div>
         </body>
         </html>

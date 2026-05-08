@@ -42,6 +42,8 @@ class ArxivPaper:
     abstract: str
     url: str
     date_published: Optional[str] = None
+    date_updated: Optional[str] = None
+    is_update: bool = False
     categories: List[str] = field(default_factory=list)
 
 
@@ -52,7 +54,8 @@ class ArxivPaper:
 
 def get_new_papers(
     categories: List[str],
-    request_delay: float = 1.0,
+    request_delay: float = 3.0,
+    api_timeout: float = 60.0,
 ) -> List[ArxivPaper]:
     """Fetch today's new papers from arXiv for the given *categories*.
 
@@ -65,6 +68,9 @@ def get_new_papers(
     Args:
         categories: List of arXiv category identifiers, e.g. ``["quant-ph", "cs.ET"]``.
         request_delay: Seconds to sleep between HTTP requests (be a good citizen).
+                      Default 3.0s; increase if hitting rate limits.
+        api_timeout: Seconds to wait for arXiv API responses (default 60.0s).
+                    Increase if getting frequent timeouts.
 
     Returns:
         List of :class:`ArxivPaper` objects with full metadata.
@@ -91,7 +97,7 @@ def get_new_papers(
     batch_size = 100
     for i in range(0, len(paper_ids), batch_size):
         batch = paper_ids[i : i + batch_size]
-        papers.extend(_fetch_paper_details(batch))
+        papers.extend(_fetch_paper_details(batch, timeout_seconds=api_timeout))
         if i + batch_size < len(paper_ids):
             time.sleep(request_delay)
 
@@ -115,7 +121,7 @@ def _fetch_rss_paper_ids(category: str) -> List[str]:
     ids: List[str] = []
     for entry in feed.entries:
         raw = entry.get("id") or entry.get("link") or ""
-        pid = extract_arxiv_id(raw)
+        pid = extract_arxiv_id(str(raw))
         if pid:
             ids.append(pid)
 
@@ -138,19 +144,88 @@ def extract_arxiv_id(url_or_id: str) -> Optional[str]:
     return m.group(1) if m else None
 
 
-def _fetch_paper_details(paper_ids: List[str]) -> List[ArxivPaper]:
-    """Retrieve full metadata for *paper_ids* via the arXiv Atom API."""
+def _fetch_paper_details(
+    paper_ids: List[str],
+    max_retries: int = 5,
+    initial_backoff: float = 2.0,
+    backoff_multiplier: float = 2.0,
+    max_backoff: float = 120.0,
+    timeout_seconds: float = 60.0,
+) -> List[ArxivPaper]:
+    """Retrieve full metadata for *paper_ids* via the arXiv Atom API.
+    
+    Implements exponential backoff for 429 (rate limit) and timeout errors
+    to tolerate peak-load periods and temporary connectivity issues on arXiv.
+    
+    Args:
+        paper_ids: List of arXiv paper IDs to fetch.
+        max_retries: Maximum retry attempts for 429/timeout errors (other errors fail immediately).
+        initial_backoff: Initial backoff time in seconds.
+        backoff_multiplier: Multiplier for backoff on each retry.
+        max_backoff: Maximum backoff time in seconds.
+        timeout_seconds: HTTP request timeout in seconds (increased from 30s to handle slow responses).
+    
+    Returns:
+        List of fetched ArxivPaper objects.
+        
+    Raises:
+        requests.RequestException: For non-retriable errors, or after exhausting retries.
+    """
     id_list = ",".join(paper_ids)
     params = {"id_list": id_list, "max_results": len(paper_ids)}
-
-    try:
-        resp = requests.get(ARXIV_API_BASE, params=params, timeout=30)
-        resp.raise_for_status()
-    except requests.RequestException as exc:
-        logger.error("Error fetching paper details from arXiv API: %s", exc)
-        return []
-
-    return _parse_api_response(resp.text)
+    
+    backoff = initial_backoff
+    for attempt in range(max_retries + 1):
+        try:
+            resp = requests.get(ARXIV_API_BASE, params=params, timeout=timeout_seconds)
+            resp.raise_for_status()
+            return _parse_api_response(resp.text)
+        except requests.HTTPError as exc:
+            # Handle 429 rate limit with exponential backoff
+            if exc.response.status_code == 429:
+                if attempt < max_retries:
+                    logger.warning(
+                        "Rate limited by arXiv API (429). "
+                        "Retrying in %.1f seconds (attempt %d/%d)…",
+                        backoff,
+                        attempt + 1,
+                        max_retries,
+                    )
+                    time.sleep(backoff)
+                    backoff = min(max_backoff, backoff * backoff_multiplier)
+                    continue
+                else:
+                    logger.error(
+                        "Rate limited by arXiv API (429). "
+                        "Exhausted %d retry attempts.",
+                        max_retries,
+                    )
+            # Non-429 HTTP errors: fail immediately
+            logger.error("Error fetching paper details from arXiv API: %s", exc)
+            raise
+        except requests.Timeout as exc:
+            # Handle timeout (read timeout, connect timeout) with exponential backoff
+            if attempt < max_retries:
+                logger.warning(
+                    "Timeout connecting to arXiv API. "
+                    "Retrying in %.1f seconds (attempt %d/%d)…",
+                    backoff,
+                    attempt + 1,
+                    max_retries,
+                )
+                time.sleep(backoff)
+                backoff = min(max_backoff, backoff * backoff_multiplier)
+                continue
+            else:
+                logger.error(
+                    "Timeout connecting to arXiv API. "
+                    "Exhausted %d retry attempts.",
+                    max_retries,
+                )
+                raise
+        except requests.RequestException as exc:
+            logger.error("Error fetching paper details from arXiv API: %s", exc)
+            raise
 
 
 def _parse_api_response(xml_text: str) -> List[ArxivPaper]:
@@ -205,7 +280,16 @@ def _parse_entry(entry: ET.Element) -> Optional[ArxivPaper]:
 
     published_elem = entry.find("atom:published", _NS)
     date_published = (
-        published_elem.text.strip() if published_elem is not None else None
+        published_elem.text.strip()
+        if published_elem is not None and published_elem.text
+        else None
+    )
+
+    updated_elem = entry.find("atom:updated", _NS)
+    date_updated = (
+        updated_elem.text.strip()
+        if updated_elem is not None and updated_elem.text
+        else None
     )
 
     categories: List[str] = [
@@ -220,5 +304,7 @@ def _parse_entry(entry: ET.Element) -> Optional[ArxivPaper]:
         abstract=abstract,
         url=f"https://arxiv.org/abs/{paper_id}",
         date_published=date_published,
+        date_updated=date_updated,
+        is_update=bool(date_published and date_updated and date_updated != date_published),
         categories=categories,
     )

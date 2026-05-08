@@ -61,6 +61,17 @@ Run this on a schedule (e.g. every hour via cron):
 0 * * * * cd /path/to/auto-arxiv-feed && .venv/bin/python scripts/update_zotero.py
 ```
 
+For transient network outages, you can enable retry-until-success in
+config.yaml:
+
+```yaml
+resilience:
+   retry_until_success: true
+   retry_delay_seconds: 30
+   retry_backoff: 2.0
+   max_retry_delay_seconds: 600
+```
+
 ### 4. Send the daily digest
 
 ```bash
@@ -72,6 +83,10 @@ Run this once per day, shortly after arXiv's daily announcement:
 ```
 30 14 * * * cd /path/to/auto-arxiv-feed && .venv/bin/python scripts/daily_digest.py
 ```
+
+When a script fails, it attempts to send an error email with retries. If SMTP
+is unreachable, the unsent notification is persisted to
+log/unsent_error_notifications.log so failures are not silent.
 
 ### Dry-run mode
 

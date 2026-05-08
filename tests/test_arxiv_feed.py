@@ -44,6 +44,7 @@ SAMPLE_ATOM = textwrap.dedent(
         <author><name>Bob Jones</name></author>
         <summary>  We present a test paper.  </summary>
         <published>2024-01-15T00:00:00Z</published>
+        <updated>2024-01-15T00:00:00Z</updated>
         <category term="quant-ph"/>
         <category term="cs.ET"/>
       </entry>
@@ -62,8 +63,31 @@ def test_parse_api_response_basic():
     assert "test paper" in p.abstract
     assert p.url == "https://arxiv.org/abs/2401.99999v1"
     assert p.date_published == "2024-01-15T00:00:00Z"
+    assert p.date_updated == "2024-01-15T00:00:00Z"
+    assert p.is_update is False
     assert "quant-ph" in p.categories
     assert "cs.ET" in p.categories
+
+
+def test_parse_entry_marks_updates_when_updated_differs_from_published():
+    xml = textwrap.dedent(
+        """\
+        <entry xmlns="http://www.w3.org/2005/Atom">
+          <id>http://arxiv.org/abs/2401.99999v2</id>
+          <title>Updated Paper</title>
+          <summary>Abstract.</summary>
+          <published>2024-01-15T00:00:00Z</published>
+          <updated>2024-01-17T00:00:00Z</updated>
+        </entry>
+        """
+    )
+
+    entry = ET.fromstring(xml)
+    paper = _parse_entry(entry)
+
+    assert paper is not None
+    assert paper.date_updated == "2024-01-17T00:00:00Z"
+    assert paper.is_update is True
 
 
 def test_parse_api_response_normalises_whitespace():

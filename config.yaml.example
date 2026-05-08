@@ -17,6 +17,12 @@ arxiv:
     # Add more arXiv category identifiers as needed, e.g.:
     # - "cond-mat.mes-hall"
     # - "cs.LG"
+  # Optional: inter-batch request delay in seconds (default: 3.0).
+  # Increase if experiencing rate-limit (429) errors at peak hours.
+  # request_delay: 5.0
+  # Optional: API request timeout in seconds (default: 60.0).
+  # Increase if getting frequent timeout errors from slow API responses.
+  # timeout_seconds: 90.0
 
 # ── Embedding provider ───────────────────────────────────────────────────────
 # provider: "openai" | "gemini" | "local"
@@ -77,3 +83,22 @@ email:
   from_address: "your@gmail.com"
   to_address: "your@gmail.com"
   subject_prefix: "[arXiv Feed]"
+
+# ── Resilience / retry behavior ─────────────────────────────────────────────
+resilience:
+  # If true, scripts retry forever until they succeed.
+  retry_until_success: false
+  # Used only when retry_until_success is false.
+  max_attempts: 3
+  retry_delay_seconds: 30
+  retry_backoff: 2.0
+  max_retry_delay_seconds: 600
+
+  # Error-email delivery retries (for send_error_notification).
+  # Use 0 for unlimited retries.
+  error_email_max_attempts: 6
+  error_email_retry_delay_seconds: 30
+  error_email_retry_backoff: 2.0
+  error_email_max_retry_delay_seconds: 300
+  # If email still cannot be sent, write details here so failures are not silent.
+  error_email_fallback_log_path: "log/unsent_error_notifications.log"
